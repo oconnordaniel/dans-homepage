@@ -36,6 +36,6 @@
     - name: build_server
       ansible.builtin.shell: 
         executable: /bin/bash
-        cmd: JEKYLL_ENV=production /home/ubuntu/gems/bundle exec jekyll b
+        cmd: JEKYLL_ENV=production bundle exec jekyll b
         chdir: /home/ubuntu/dans-homepage
 
