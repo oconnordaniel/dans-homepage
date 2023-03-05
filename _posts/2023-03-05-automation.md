@@ -85,7 +85,7 @@ ansible-playbook ansible-play/deploy.yml
 
 and my site is updated.
 
-Note: There's a little more in the `deploy.yml` play. But the rest is getting Jekyll and Bundler setup.
+Note: There's a little more in the `deploy.yml` play. But the rest is getting Jekyll and Bundler setup. You can see that at [the repo](https://github.com/oconnordaniel/dans-homepage.git)
 
 ### Step 3. Github action
 
