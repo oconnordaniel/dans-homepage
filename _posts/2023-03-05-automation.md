@@ -68,7 +68,8 @@ The next step is to have a task that tells my instance to git pull and if there 
   handlers:
     - name: build_server
       ansible.builtin.shell: 
-        cmd: JEKYLL_ENV=production bundle exec jekyll b
+        executable: /bin/bash
+        cmd: JEKYLL_ENV=production /home/ubuntu/gems/bin/bundle exec jekyll b
         chdir: /home/ubuntu/dans-homepage
 ```
 
