@@ -56,8 +56,10 @@
         cmd: JEKYLL_ENV=production /home/ubuntu/gems/bin/bundle exec jekyll b
         chdir: /home/ubuntu/dans-homepage
         executable: /bin/bash
+      notify: restart_docker
 
-    - community.docker.docker_container:
+    - name: restart_docker
+      community.docker.docker_container:
         name: dans-homepage_dans-homepage_1
         restart: true
 
