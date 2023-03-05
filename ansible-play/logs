@@ -735,3 +735,24 @@ The offending line appears to be:
 2023-03-05 16:31:12,755 p=20033 u=dan n=ansible | changed: [ec2-54-186-211-240.us-west-2.compute.amazonaws.com]
 2023-03-05 16:31:12,773 p=20033 u=dan n=ansible | PLAY RECAP **************************************************************************************************************************************************************
 2023-03-05 16:31:12,774 p=20033 u=dan n=ansible | ec2-54-186-211-240.us-west-2.compute.amazonaws.com : ok=9    changed=4    unreachable=0    failed=0    skipped=0    rescued=0    ignored=0   
+2023-03-05 16:44:15,051 p=24355 u=dan n=ansible | PLAY [all] **************************************************************************************************************************************************************
+2023-03-05 16:44:15,059 p=24355 u=dan n=ansible | TASK [Gathering Facts ] *************************************************************************************************************************************************
+2023-03-05 16:44:17,850 p=24355 u=dan n=ansible | ok: [ec2-54-186-211-240.us-west-2.compute.amazonaws.com]
+2023-03-05 16:44:17,867 p=24355 u=dan n=ansible | TASK [Install tools name=['git', 'docker', 'docker-compose', 'ruby-full', 'build-essential', 'zlib1g-dev']] *************************************************************
+2023-03-05 16:44:19,201 p=24355 u=dan n=ansible | ok: [ec2-54-186-211-240.us-west-2.compute.amazonaws.com]
+2023-03-05 16:44:19,215 p=24355 u=dan n=ansible | TASK [Install jekyll name=jekyll, state=latest] *************************************************************************************************************************
+2023-03-05 16:44:20,743 p=24355 u=dan n=ansible | ok: [ec2-54-186-211-240.us-west-2.compute.amazonaws.com]
+2023-03-05 16:44:20,756 p=24355 u=dan n=ansible | TASK [Install bundler name=bundler, state=latest] ***********************************************************************************************************************
+2023-03-05 16:44:22,227 p=24355 u=dan n=ansible | ok: [ec2-54-186-211-240.us-west-2.compute.amazonaws.com]
+2023-03-05 16:44:22,241 p=24355 u=dan n=ansible | TASK [Setup bundle chdir=/home/ubuntu/dans-homepage, executable=/bin/bash, _raw_params=/home/ubuntu/gems/bin/bundle] ****************************************************
+2023-03-05 16:44:23,242 p=24355 u=dan n=ansible | changed: [ec2-54-186-211-240.us-west-2.compute.amazonaws.com]
+2023-03-05 16:44:23,249 p=24355 u=dan n=ansible | TASK [Pull the latest main branch from github repo=https://github.com/oconnordaniel/dans-homepage.git, dest=/home/ubuntu/dans-homepage] *********************************
+2023-03-05 16:44:24,605 p=24355 u=dan n=ansible | changed: [ec2-54-186-211-240.us-west-2.compute.amazonaws.com]
+2023-03-05 16:44:24,617 p=24355 u=dan n=ansible | TASK [community.docker.docker_compose project_name=dans-homepage, definition={'version': '2', 'services': {'dans-homepage': {'image': 'nginx:stable-alpine', 'volumes': ['/home/ubuntu/dans-homepage/_site/:/usr/share/nginx/html/'], 'ports': ['80:80']}}}] ***
+2023-03-05 16:44:25,398 p=24355 u=dan n=ansible | ok: [ec2-54-186-211-240.us-west-2.compute.amazonaws.com]
+2023-03-05 16:44:25,419 p=24355 u=dan n=ansible | RUNNING HANDLER [build_server chdir=/home/ubuntu/dans-homepage, executable=/bin/bash, _raw_params=JEKYLL_ENV=production /home/ubuntu/gems/bin/bundle exec jekyll b] *****
+2023-03-05 16:44:27,452 p=24355 u=dan n=ansible | changed: [ec2-54-186-211-240.us-west-2.compute.amazonaws.com]
+2023-03-05 16:44:27,463 p=24355 u=dan n=ansible | RUNNING HANDLER [restart_docker name=dans-homepage_dans-homepage_1, restart=True] ***************************************************************************************
+2023-03-05 16:44:28,889 p=24355 u=dan n=ansible | changed: [ec2-54-186-211-240.us-west-2.compute.amazonaws.com]
+2023-03-05 16:44:28,906 p=24355 u=dan n=ansible | PLAY RECAP **************************************************************************************************************************************************************
+2023-03-05 16:44:28,907 p=24355 u=dan n=ansible | ec2-54-186-211-240.us-west-2.compute.amazonaws.com : ok=9    changed=4    unreachable=0    failed=0    skipped=0    rescued=0    ignored=0   
