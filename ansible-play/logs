@@ -495,3 +495,23 @@ The offending line appears to be:
 2023-03-05 16:01:04,731 p=3127 u=dan n=ansible | TASK [Gathering Facts ] *************************************************************************************************************************************************
 2023-03-05 16:01:05,515 p=3127 u=dan n=ansible |  [ERROR]: User interrupted execution
 
+2023-03-05 16:01:16,235 p=3290 u=dan n=ansible | PLAY [all] **************************************************************************************************************************************************************
+2023-03-05 16:01:16,239 p=3290 u=dan n=ansible | TASK [Gathering Facts ] *************************************************************************************************************************************************
+2023-03-05 16:01:18,808 p=3290 u=dan n=ansible | ok: [ec2-54-186-211-240.us-west-2.compute.amazonaws.com]
+2023-03-05 16:01:18,825 p=3290 u=dan n=ansible | TASK [Install tools name=['git', 'docker', 'docker-compose', 'ruby-full', 'build-essential', 'zlib1g-dev']] *************************************************************
+2023-03-05 16:01:20,004 p=3290 u=dan n=ansible | ok: [ec2-54-186-211-240.us-west-2.compute.amazonaws.com]
+2023-03-05 16:01:20,016 p=3290 u=dan n=ansible | TASK [Install bundle name=['bundle', 'jekyll'], state=latest] ***********************************************************************************************************
+2023-03-05 16:01:22,055 p=3290 u=dan n=ansible | fatal: [ec2-54-186-211-240.us-west-2.compute.amazonaws.com]: FAILED! => changed=false 
+  cmd: /usr/bin/gem install --norc --version 1.0.3 --user-install --no-document '['"'"'bundle'"'"', '"'"'jekyll'"'"']'
+  msg: |-
+    ERROR:  While executing gem ... (URI::InvalidURIError)
+        bad URI(is not URI?): "['bundle', 'jekyll']"
+  rc: 1
+  stderr: |-
+    ERROR:  While executing gem ... (URI::InvalidURIError)
+        bad URI(is not URI?): "['bundle', 'jekyll']"
+  stderr_lines: <omitted>
+  stdout: ''
+  stdout_lines: <omitted>
+2023-03-05 16:01:22,057 p=3290 u=dan n=ansible | PLAY RECAP **************************************************************************************************************************************************************
+2023-03-05 16:01:22,057 p=3290 u=dan n=ansible | ec2-54-186-211-240.us-west-2.compute.amazonaws.com : ok=2    changed=0    unreachable=0    failed=1    skipped=0    rescued=0    ignored=0   
