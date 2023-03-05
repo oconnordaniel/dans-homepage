@@ -14,6 +14,19 @@
           - build-essential 
           - zlib1g-dev
 
+    - name: Install bundle
+      community.general.gem:
+        name: 
+          - bundle 
+          - jekyll
+        state: latest
+
+    - name: Setup bundle
+      ansible.builtin.shell: 
+        cmd: bundle
+        chdir: /home/ubuntu/dans-homepage
+
+
     - name: Pull the latest main branch from github
       ansible.builtin.git:
         repo: 'https://github.com/oconnordaniel/dans-homepage.git'
