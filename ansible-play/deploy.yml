@@ -14,7 +14,10 @@
           - build-essential 
           - zlib1g-dev
 
+#    - name: Copy bashrc for jekyll         
+
     - name: Install bundle
+      become: true
       community.general.gem:
         name: 
           - 'jekyll' 
