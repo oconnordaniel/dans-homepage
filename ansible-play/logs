@@ -515,3 +515,23 @@ The offending line appears to be:
   stdout_lines: <omitted>
 2023-03-05 16:01:22,057 p=3290 u=dan n=ansible | PLAY RECAP **************************************************************************************************************************************************************
 2023-03-05 16:01:22,057 p=3290 u=dan n=ansible | ec2-54-186-211-240.us-west-2.compute.amazonaws.com : ok=2    changed=0    unreachable=0    failed=1    skipped=0    rescued=0    ignored=0   
+2023-03-05 16:02:32,827 p=4095 u=dan n=ansible | PLAY [all] **************************************************************************************************************************************************************
+2023-03-05 16:02:32,833 p=4095 u=dan n=ansible | TASK [Gathering Facts ] *************************************************************************************************************************************************
+2023-03-05 16:02:36,275 p=4095 u=dan n=ansible | ok: [ec2-54-186-211-240.us-west-2.compute.amazonaws.com]
+2023-03-05 16:02:36,293 p=4095 u=dan n=ansible | TASK [Install tools name=['git', 'docker', 'docker-compose', 'ruby-full', 'build-essential', 'zlib1g-dev']] *************************************************************
+2023-03-05 16:02:37,532 p=4095 u=dan n=ansible | ok: [ec2-54-186-211-240.us-west-2.compute.amazonaws.com]
+2023-03-05 16:02:37,544 p=4095 u=dan n=ansible | TASK [Install bundle name=['jekyll', 'bundle'], state=latest] ***********************************************************************************************************
+2023-03-05 16:02:39,368 p=4095 u=dan n=ansible | fatal: [ec2-54-186-211-240.us-west-2.compute.amazonaws.com]: FAILED! => changed=false 
+  cmd: /usr/bin/gem install --norc --version 1.0.3 --user-install --no-document '['"'"'jekyll'"'"', '"'"'bundle'"'"']'
+  msg: |-
+    ERROR:  While executing gem ... (URI::InvalidURIError)
+        bad URI(is not URI?): "['jekyll', 'bundle']"
+  rc: 1
+  stderr: |-
+    ERROR:  While executing gem ... (URI::InvalidURIError)
+        bad URI(is not URI?): "['jekyll', 'bundle']"
+  stderr_lines: <omitted>
+  stdout: ''
+  stdout_lines: <omitted>
+2023-03-05 16:02:39,370 p=4095 u=dan n=ansible | PLAY RECAP **************************************************************************************************************************************************************
+2023-03-05 16:02:39,370 p=4095 u=dan n=ansible | ec2-54-186-211-240.us-west-2.compute.amazonaws.com : ok=2    changed=0    unreachable=0    failed=1    skipped=0    rescued=0    ignored=0   

@@ -17,8 +17,8 @@
     - name: Install bundle
       community.general.gem:
         name: 
-          - jekyll 
-          - bundle 
+          - 'jekyll' 
+          - 'bundle'
         state: latest
 
     - name: Setup bundle
