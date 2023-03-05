@@ -35,7 +35,7 @@
   handlers:
     - name: build_server
       ansible.builtin.shell: 
-        cmd: JEKYLL_ENV=production bundle exec jekyll b
+        cmd: JEKYLL_ENV=production /home/ubuntu/gems/bin/bundle exec jekyll b
         chdir: /home/ubuntu/dans-homepage
       args:
         executable: /bin/bash

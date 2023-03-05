@@ -432,3 +432,37 @@ The offending line appears to be:
 2023-03-05 15:55:34,021 p=99584 u=dan n=ansible | TASK [Gathering Facts ] *************************************************************************************************************************************************
 2023-03-05 15:55:35,148 p=99584 u=dan n=ansible |  [ERROR]: User interrupted execution
 
+2023-03-05 15:55:48,216 p=99793 u=dan n=ansible | PLAY [all] **************************************************************************************************************************************************************
+2023-03-05 15:55:48,220 p=99793 u=dan n=ansible | TASK [Gathering Facts ] *************************************************************************************************************************************************
+2023-03-05 15:55:49,786 p=99793 u=dan n=ansible | ok: [ec2-54-186-211-240.us-west-2.compute.amazonaws.com]
+2023-03-05 15:55:49,803 p=99793 u=dan n=ansible | TASK [Install tools name=['git', 'docker', 'docker-compose', 'ruby-full', 'build-essential', 'zlib1g-dev']] *************************************************************
+2023-03-05 15:55:50,985 p=99793 u=dan n=ansible | ok: [ec2-54-186-211-240.us-west-2.compute.amazonaws.com]
+2023-03-05 15:55:51,000 p=99793 u=dan n=ansible | TASK [Pull the latest main branch from github repo=https://github.com/oconnordaniel/dans-homepage.git, dest=/home/ubuntu/dans-homepage] *********************************
+2023-03-05 15:55:52,315 p=99793 u=dan n=ansible | changed: [ec2-54-186-211-240.us-west-2.compute.amazonaws.com]
+2023-03-05 15:55:52,327 p=99793 u=dan n=ansible | TASK [community.docker.docker_compose project_name=dans-homepage, definition={'version': '2', 'services': {'dans-homepage': {'image': 'nginx:stable-alpine', 'volumes': ['/home/ubuntu/dans-homepage/_site/:/usr/share/nginx/html/'], 'ports': ['80:80']}}}] ***
+2023-03-05 15:55:53,039 p=99793 u=dan n=ansible | ok: [ec2-54-186-211-240.us-west-2.compute.amazonaws.com]
+2023-03-05 15:55:53,064 p=99793 u=dan n=ansible | RUNNING HANDLER [build_server executable=/bin/bash, chdir=/home/ubuntu/dans-homepage, _raw_params=JEKYLL_ENV=production bundle exec jekyll b] ***************************
+2023-03-05 15:55:53,458 p=99793 u=dan n=ansible | fatal: [ec2-54-186-211-240.us-west-2.compute.amazonaws.com]: FAILED! => changed=true 
+  cmd: JEKYLL_ENV=production bundle exec jekyll b
+  delta: '0:00:00.004180'
+  end: '2023-03-05 22:55:53.447791'
+  msg: non-zero return code
+  rc: 127
+  start: '2023-03-05 22:55:53.443611'
+  stderr: '/bin/bash: line 1: bundle: command not found'
+  stderr_lines: <omitted>
+  stdout: ''
+  stdout_lines: <omitted>
+2023-03-05 15:55:53,460 p=99793 u=dan n=ansible | PLAY RECAP **************************************************************************************************************************************************************
+2023-03-05 15:55:53,461 p=99793 u=dan n=ansible | ec2-54-186-211-240.us-west-2.compute.amazonaws.com : ok=4    changed=1    unreachable=0    failed=1    skipped=0    rescued=0    ignored=0   
+2023-03-05 15:56:38,759 p=512 u=dan n=ansible | PLAY [all] **************************************************************************************************************************************************************
+2023-03-05 15:56:38,763 p=512 u=dan n=ansible | TASK [Gathering Facts ] *************************************************************************************************************************************************
+2023-03-05 15:56:40,166 p=512 u=dan n=ansible | ok: [ec2-54-186-211-240.us-west-2.compute.amazonaws.com]
+2023-03-05 15:56:40,183 p=512 u=dan n=ansible | TASK [Install tools name=['git', 'docker', 'docker-compose', 'ruby-full', 'build-essential', 'zlib1g-dev']] *************************************************************
+2023-03-05 15:56:41,469 p=512 u=dan n=ansible | ok: [ec2-54-186-211-240.us-west-2.compute.amazonaws.com]
+2023-03-05 15:56:41,483 p=512 u=dan n=ansible | TASK [Pull the latest main branch from github repo=https://github.com/oconnordaniel/dans-homepage.git, dest=/home/ubuntu/dans-homepage] *********************************
+2023-03-05 15:56:42,702 p=512 u=dan n=ansible | ok: [ec2-54-186-211-240.us-west-2.compute.amazonaws.com]
+2023-03-05 15:56:42,715 p=512 u=dan n=ansible | TASK [community.docker.docker_compose project_name=dans-homepage, definition={'version': '2', 'services': {'dans-homepage': {'image': 'nginx:stable-alpine', 'volumes': ['/home/ubuntu/dans-homepage/_site/:/usr/share/nginx/html/'], 'ports': ['80:80']}}}] ***
+2023-03-05 15:56:43,380 p=512 u=dan n=ansible | ok: [ec2-54-186-211-240.us-west-2.compute.amazonaws.com]
+2023-03-05 15:56:43,413 p=512 u=dan n=ansible | PLAY RECAP **************************************************************************************************************************************************************
+2023-03-05 15:56:43,414 p=512 u=dan n=ansible | ec2-54-186-211-240.us-west-2.compute.amazonaws.com : ok=4    changed=0    unreachable=0    failed=0    skipped=0    rescued=0    ignored=0   
