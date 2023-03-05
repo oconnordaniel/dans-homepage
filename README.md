@@ -47,6 +47,20 @@
 
 7. Push dockerfile to AWS?
 
+    Option 1. Docker-compose
+        [x] - docker-compose file that has:
+            - 80:80
+            - file: ./_site : /usr/share/nginx/html:ro
+            - restart: always
+        Github:
+            On push to main:
+                - notify ec2 instance to:
+                    - git pull
+                    - jekyll build
+                    - restart docker-compose (if needed)
+
+    Option 2. Script everything
+
 ## Resources
 
 <https://motherfuckingwebsite.com/>
