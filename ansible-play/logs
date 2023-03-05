@@ -555,3 +555,132 @@ The offending line appears to be:
   stdout_lines: <omitted>
 2023-03-05 16:08:13,832 p=5099 u=dan n=ansible | PLAY RECAP **************************************************************************************************************************************************************
 2023-03-05 16:08:13,833 p=5099 u=dan n=ansible | ec2-54-186-211-240.us-west-2.compute.amazonaws.com : ok=2    changed=0    unreachable=0    failed=1    skipped=0    rescued=0    ignored=0   
+2023-03-05 16:12:01,826 p=7246 u=dan n=ansible | PLAY [all] **************************************************************************************************************************************************************
+2023-03-05 16:12:01,831 p=7246 u=dan n=ansible | TASK [Gathering Facts ] *************************************************************************************************************************************************
+2023-03-05 16:12:04,386 p=7246 u=dan n=ansible | ok: [ec2-54-186-211-240.us-west-2.compute.amazonaws.com]
+2023-03-05 16:12:04,397 p=7246 u=dan n=ansible | TASK [Install tools name=['git', 'docker', 'docker-compose', 'ruby-full', 'build-essential', 'zlib1g-dev']] *************************************************************
+2023-03-05 16:12:05,566 p=7246 u=dan n=ansible | ok: [ec2-54-186-211-240.us-west-2.compute.amazonaws.com]
+2023-03-05 16:12:05,579 p=7246 u=dan n=ansible | TASK [Install bundle name=['jekyll', 'bundle'], state=latest] ***********************************************************************************************************
+2023-03-05 16:12:07,455 p=7246 u=dan n=ansible | fatal: [ec2-54-186-211-240.us-west-2.compute.amazonaws.com]: FAILED! => changed=false 
+  cmd: /usr/bin/gem install --norc --version 1.0.3 --user-install --no-document '['"'"'jekyll'"'"', '"'"'bundle'"'"']'
+  msg: |-
+    ERROR:  While executing gem ... (URI::InvalidURIError)
+        bad URI(is not URI?): "['jekyll', 'bundle']"
+  rc: 1
+  stderr: |-
+    ERROR:  While executing gem ... (URI::InvalidURIError)
+        bad URI(is not URI?): "['jekyll', 'bundle']"
+  stderr_lines: <omitted>
+  stdout: ''
+  stdout_lines: <omitted>
+2023-03-05 16:12:07,458 p=7246 u=dan n=ansible | PLAY RECAP **************************************************************************************************************************************************************
+2023-03-05 16:12:07,458 p=7246 u=dan n=ansible | ec2-54-186-211-240.us-west-2.compute.amazonaws.com : ok=2    changed=0    unreachable=0    failed=1    skipped=0    rescued=0    ignored=0   
+2023-03-05 16:13:03,439 p=7819 u=dan n=ansible | PLAY [all] **************************************************************************************************************************************************************
+2023-03-05 16:13:03,444 p=7819 u=dan n=ansible | TASK [Gathering Facts ] *************************************************************************************************************************************************
+2023-03-05 16:13:05,007 p=7819 u=dan n=ansible | ok: [ec2-54-186-211-240.us-west-2.compute.amazonaws.com]
+2023-03-05 16:13:05,023 p=7819 u=dan n=ansible | TASK [Install tools name=['git', 'docker', 'docker-compose', 'ruby-full', 'build-essential', 'zlib1g-dev']] *************************************************************
+2023-03-05 16:13:06,120 p=7819 u=dan n=ansible | ok: [ec2-54-186-211-240.us-west-2.compute.amazonaws.com]
+2023-03-05 16:13:06,133 p=7819 u=dan n=ansible | TASK [Install bundle name=jekyll, state=latest] *************************************************************************************************************************
+2023-03-05 16:13:49,546 p=7819 u=dan n=ansible | changed: [ec2-54-186-211-240.us-west-2.compute.amazonaws.com]
+2023-03-05 16:13:49,560 p=7819 u=dan n=ansible | TASK [Setup bundle chdir=/home/ubuntu/dans-homepage, _raw_params=bundle] ************************************************************************************************
+2023-03-05 16:13:50,002 p=7819 u=dan n=ansible | fatal: [ec2-54-186-211-240.us-west-2.compute.amazonaws.com]: FAILED! => changed=true 
+  cmd: bundle
+  delta: '0:00:00.003279'
+  end: '2023-03-05 23:13:50.021375'
+  msg: non-zero return code
+  rc: 127
+  start: '2023-03-05 23:13:50.018096'
+  stderr: '/bin/sh: 1: bundle: not found'
+  stderr_lines: <omitted>
+  stdout: ''
+  stdout_lines: <omitted>
+2023-03-05 16:13:50,004 p=7819 u=dan n=ansible | PLAY RECAP **************************************************************************************************************************************************************
+2023-03-05 16:13:50,004 p=7819 u=dan n=ansible | ec2-54-186-211-240.us-west-2.compute.amazonaws.com : ok=3    changed=1    unreachable=0    failed=1    skipped=0    rescued=0    ignored=0   
+2023-03-05 16:14:43,502 p=8679 u=dan n=ansible | PLAY [all] **************************************************************************************************************************************************************
+2023-03-05 16:14:43,507 p=8679 u=dan n=ansible | TASK [Gathering Facts ] *************************************************************************************************************************************************
+2023-03-05 16:14:44,961 p=8679 u=dan n=ansible | ok: [ec2-54-186-211-240.us-west-2.compute.amazonaws.com]
+2023-03-05 16:14:44,969 p=8679 u=dan n=ansible | TASK [Install tools name=['git', 'docker', 'docker-compose', 'ruby-full', 'build-essential', 'zlib1g-dev']] *************************************************************
+2023-03-05 16:14:46,271 p=8679 u=dan n=ansible | ok: [ec2-54-186-211-240.us-west-2.compute.amazonaws.com]
+2023-03-05 16:14:46,283 p=8679 u=dan n=ansible | TASK [Install jekyll name=jekyll, state=latest] *************************************************************************************************************************
+2023-03-05 16:14:47,747 p=8679 u=dan n=ansible | ok: [ec2-54-186-211-240.us-west-2.compute.amazonaws.com]
+2023-03-05 16:14:47,759 p=8679 u=dan n=ansible | TASK [Install bundle name=bundle, state=latest] *************************************************************************************************************************
+2023-03-05 16:14:49,575 p=8679 u=dan n=ansible | changed: [ec2-54-186-211-240.us-west-2.compute.amazonaws.com]
+2023-03-05 16:14:49,588 p=8679 u=dan n=ansible | TASK [Setup bundle chdir=/home/ubuntu/dans-homepage, _raw_params=bundle] ************************************************************************************************
+2023-03-05 16:14:49,959 p=8679 u=dan n=ansible | fatal: [ec2-54-186-211-240.us-west-2.compute.amazonaws.com]: FAILED! => changed=true 
+  cmd: bundle
+  delta: '0:00:00.003022'
+  end: '2023-03-05 23:14:49.983057'
+  msg: non-zero return code
+  rc: 127
+  start: '2023-03-05 23:14:49.980035'
+  stderr: '/bin/sh: 1: bundle: not found'
+  stderr_lines: <omitted>
+  stdout: ''
+  stdout_lines: <omitted>
+2023-03-05 16:14:49,960 p=8679 u=dan n=ansible | PLAY RECAP **************************************************************************************************************************************************************
+2023-03-05 16:14:49,960 p=8679 u=dan n=ansible | ec2-54-186-211-240.us-west-2.compute.amazonaws.com : ok=4    changed=1    unreachable=0    failed=1    skipped=0    rescued=0    ignored=0   
+2023-03-05 16:15:15,715 p=9071 u=dan n=ansible | PLAY [all] **************************************************************************************************************************************************************
+2023-03-05 16:15:15,720 p=9071 u=dan n=ansible | TASK [Gathering Facts ] *************************************************************************************************************************************************
+2023-03-05 16:15:17,854 p=9071 u=dan n=ansible | ok: [ec2-54-186-211-240.us-west-2.compute.amazonaws.com]
+2023-03-05 16:15:17,867 p=9071 u=dan n=ansible | TASK [Install tools name=['git', 'docker', 'docker-compose', 'ruby-full', 'build-essential', 'zlib1g-dev']] *************************************************************
+2023-03-05 16:15:19,145 p=9071 u=dan n=ansible | ok: [ec2-54-186-211-240.us-west-2.compute.amazonaws.com]
+2023-03-05 16:15:19,158 p=9071 u=dan n=ansible | TASK [Install jekyll name=jekyll, state=latest] *************************************************************************************************************************
+2023-03-05 16:15:21,604 p=9071 u=dan n=ansible | ok: [ec2-54-186-211-240.us-west-2.compute.amazonaws.com]
+2023-03-05 16:15:21,617 p=9071 u=dan n=ansible | TASK [Install bundle name=bundle, state=latest] *************************************************************************************************************************
+2023-03-05 16:15:24,158 p=9071 u=dan n=ansible | ok: [ec2-54-186-211-240.us-west-2.compute.amazonaws.com]
+2023-03-05 16:15:24,171 p=9071 u=dan n=ansible | TASK [Setup bundle chdir=/home/ubuntu/dans-homepage, executable=/bin/bash, _raw_params=bundle] **************************************************************************
+2023-03-05 16:15:25,005 p=9071 u=dan n=ansible | fatal: [ec2-54-186-211-240.us-west-2.compute.amazonaws.com]: FAILED! => changed=true 
+  cmd: bundle
+  delta: '0:00:00.003789'
+  end: '2023-03-05 23:15:25.030010'
+  msg: non-zero return code
+  rc: 127
+  start: '2023-03-05 23:15:25.026221'
+  stderr: '/bin/bash: line 1: bundle: command not found'
+  stderr_lines: <omitted>
+  stdout: ''
+  stdout_lines: <omitted>
+2023-03-05 16:15:25,007 p=9071 u=dan n=ansible | PLAY RECAP **************************************************************************************************************************************************************
+2023-03-05 16:15:25,007 p=9071 u=dan n=ansible | ec2-54-186-211-240.us-west-2.compute.amazonaws.com : ok=4    changed=0    unreachable=0    failed=1    skipped=0    rescued=0    ignored=0   
+2023-03-05 16:16:00,125 p=9585 u=dan n=ansible | PLAY [all] **************************************************************************************************************************************************************
+2023-03-05 16:16:00,130 p=9585 u=dan n=ansible | TASK [Gathering Facts ] *************************************************************************************************************************************************
+2023-03-05 16:16:02,176 p=9585 u=dan n=ansible | ok: [ec2-54-186-211-240.us-west-2.compute.amazonaws.com]
+2023-03-05 16:16:02,185 p=9585 u=dan n=ansible | TASK [Install tools name=['git', 'docker', 'docker-compose', 'ruby-full', 'build-essential', 'zlib1g-dev']] *************************************************************
+2023-03-05 16:16:03,657 p=9585 u=dan n=ansible | ok: [ec2-54-186-211-240.us-west-2.compute.amazonaws.com]
+2023-03-05 16:16:03,669 p=9585 u=dan n=ansible | TASK [Install jekyll name=jekyll, state=latest] *************************************************************************************************************************
+2023-03-05 16:16:05,744 p=9585 u=dan n=ansible | ok: [ec2-54-186-211-240.us-west-2.compute.amazonaws.com]
+2023-03-05 16:16:05,755 p=9585 u=dan n=ansible | TASK [Install bundler name=bundler, state=latest] ***********************************************************************************************************************
+2023-03-05 16:16:08,117 p=9585 u=dan n=ansible | changed: [ec2-54-186-211-240.us-west-2.compute.amazonaws.com]
+2023-03-05 16:16:08,131 p=9585 u=dan n=ansible | TASK [Setup bundle chdir=/home/ubuntu/dans-homepage, executable=/bin/bash, _raw_params=bundle] **************************************************************************
+2023-03-05 16:16:12,268 p=9585 u=dan n=ansible | fatal: [ec2-54-186-211-240.us-west-2.compute.amazonaws.com]: FAILED! => changed=true 
+  cmd: bundle
+  delta: '0:00:00.003720'
+  end: '2023-03-05 23:16:12.287763'
+  msg: non-zero return code
+  rc: 127
+  start: '2023-03-05 23:16:12.284043'
+  stderr: '/bin/bash: line 1: bundle: command not found'
+  stderr_lines: <omitted>
+  stdout: ''
+  stdout_lines: <omitted>
+2023-03-05 16:16:12,270 p=9585 u=dan n=ansible | PLAY RECAP **************************************************************************************************************************************************************
+2023-03-05 16:16:12,270 p=9585 u=dan n=ansible | ec2-54-186-211-240.us-west-2.compute.amazonaws.com : ok=4    changed=1    unreachable=0    failed=1    skipped=0    rescued=0    ignored=0   
+2023-03-05 16:17:30,414 p=10541 u=dan n=ansible | PLAY [all] **************************************************************************************************************************************************************
+2023-03-05 16:17:30,420 p=10541 u=dan n=ansible | TASK [Gathering Facts ] *************************************************************************************************************************************************
+2023-03-05 16:17:33,472 p=10541 u=dan n=ansible | ok: [ec2-54-186-211-240.us-west-2.compute.amazonaws.com]
+2023-03-05 16:17:33,489 p=10541 u=dan n=ansible | TASK [Install tools name=['git', 'docker', 'docker-compose', 'ruby-full', 'build-essential', 'zlib1g-dev']] *************************************************************
+2023-03-05 16:17:34,906 p=10541 u=dan n=ansible | ok: [ec2-54-186-211-240.us-west-2.compute.amazonaws.com]
+2023-03-05 16:17:34,918 p=10541 u=dan n=ansible | TASK [Install jekyll name=jekyll, state=latest] *************************************************************************************************************************
+2023-03-05 16:17:36,554 p=10541 u=dan n=ansible | ok: [ec2-54-186-211-240.us-west-2.compute.amazonaws.com]
+2023-03-05 16:17:36,568 p=10541 u=dan n=ansible | TASK [Install bundler name=bundler, state=latest] ***********************************************************************************************************************
+2023-03-05 16:17:38,202 p=10541 u=dan n=ansible | ok: [ec2-54-186-211-240.us-west-2.compute.amazonaws.com]
+2023-03-05 16:17:38,216 p=10541 u=dan n=ansible | TASK [Setup bundle chdir=/home/ubuntu/dans-homepage, executable=/bin/bash, _raw_params=/home/ubuntu/gems/bin/bundle] ****************************************************
+2023-03-05 16:18:25,313 p=10541 u=dan n=ansible | changed: [ec2-54-186-211-240.us-west-2.compute.amazonaws.com]
+2023-03-05 16:18:25,326 p=10541 u=dan n=ansible | TASK [Pull the latest main branch from github repo=https://github.com/oconnordaniel/dans-homepage.git, dest=/home/ubuntu/dans-homepage] *********************************
+2023-03-05 16:18:26,948 p=10541 u=dan n=ansible | changed: [ec2-54-186-211-240.us-west-2.compute.amazonaws.com]
+2023-03-05 16:18:26,960 p=10541 u=dan n=ansible | TASK [community.docker.docker_compose project_name=dans-homepage, definition={'version': '2', 'services': {'dans-homepage': {'image': 'nginx:stable-alpine', 'volumes': ['/home/ubuntu/dans-homepage/_site/:/usr/share/nginx/html/'], 'ports': ['80:80']}}}] ***
+2023-03-05 16:18:27,789 p=10541 u=dan n=ansible | ok: [ec2-54-186-211-240.us-west-2.compute.amazonaws.com]
+2023-03-05 16:18:27,815 p=10541 u=dan n=ansible | RUNNING HANDLER [build_server chdir=/home/ubuntu/dans-homepage, executable=/bin/bash, _raw_params=JEKYLL_ENV=production /home/ubuntu/gems/bin/bundle exec jekyll b] *****
+2023-03-05 16:18:30,322 p=10541 u=dan n=ansible | changed: [ec2-54-186-211-240.us-west-2.compute.amazonaws.com]
+2023-03-05 16:18:30,338 p=10541 u=dan n=ansible | PLAY RECAP **************************************************************************************************************************************************************
+2023-03-05 16:18:30,338 p=10541 u=dan n=ansible | ec2-54-186-211-240.us-west-2.compute.amazonaws.com : ok=8    changed=3    unreachable=0    failed=0    skipped=0    rescued=0    ignored=0   

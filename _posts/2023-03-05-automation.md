@@ -71,6 +71,10 @@ The next step is to have a task that tells my instance to git pull and if there 
         executable: /bin/bash
         cmd: JEKYLL_ENV=production /home/ubuntu/gems/bin/bundle exec jekyll b
         chdir: /home/ubuntu/dans-homepage
+      
+      community.docker.docker_container:
+        name: dans-homepage_dans-homepage_1
+        restart: true
 ```
 
 And ta-da! Once I'm done making a post in the _post folder, I can `git push` it then run
@@ -79,9 +83,10 @@ And ta-da! Once I'm done making a post in the _post folder, I can `git push` it 
 ansible-playbook ansible-play/deploy.yml
 ```
 
-and my site is updated. 
+and my site is updated.
+
+Note: There's a little more in the `deploy.yml` play. But the rest is getting Jekyll and Bundler setup.
 
 ### Step 3. Github action
 
-Next step will be to get gethub actions to run my ansible play. But that's another post. 
-
+Next step will be to get gethub actions to run my ansible play. But that's another post.

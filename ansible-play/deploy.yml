@@ -14,21 +14,23 @@
           - build-essential 
           - zlib1g-dev
 
-#    - name: Copy bashrc for jekyll         
-
-    - name: Install bundle
+    - name: Install jekyll
       become: true
       community.general.gem:
-        name: 
-          - 'jekyll' 
-          - 'bundle'
+        name: jekyll 
+        state: latest
+
+    - name: Install bundler
+      become: true
+      community.general.gem:
+        name: bundler
         state: latest
 
     - name: Setup bundle
       ansible.builtin.shell: 
-        cmd: bundle
+        cmd: /home/ubuntu/gems/bin/bundle
         chdir: /home/ubuntu/dans-homepage
-
+        executable: /bin/bash
 
     - name: Pull the latest main branch from github
       ansible.builtin.git:
@@ -53,5 +55,10 @@
       ansible.builtin.shell: 
         cmd: JEKYLL_ENV=production /home/ubuntu/gems/bin/bundle exec jekyll b
         chdir: /home/ubuntu/dans-homepage
-      args:
         executable: /bin/bash
+
+      community.docker.docker_container:
+        name: dans-homepage_dans-homepage_1
+        restart: true
+
+
