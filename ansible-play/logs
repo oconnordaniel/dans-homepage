@@ -405,3 +405,26 @@ The offending line appears to be:
 2023-03-05 15:52:57,930 p=98055 u=dan n=ansible | ok: [ec2-54-186-211-240.us-west-2.compute.amazonaws.com]
 2023-03-05 15:52:57,962 p=98055 u=dan n=ansible | PLAY RECAP **************************************************************************************************************************************************************
 2023-03-05 15:52:57,962 p=98055 u=dan n=ansible | ec2-54-186-211-240.us-west-2.compute.amazonaws.com : ok=4    changed=0    unreachable=0    failed=0    skipped=0    rescued=0    ignored=0   
+2023-03-05 15:53:19,170 p=98370 u=dan n=ansible | PLAY [all] **************************************************************************************************************************************************************
+2023-03-05 15:53:19,174 p=98370 u=dan n=ansible | TASK [Gathering Facts ] *************************************************************************************************************************************************
+2023-03-05 15:53:20,688 p=98370 u=dan n=ansible | ok: [ec2-54-186-211-240.us-west-2.compute.amazonaws.com]
+2023-03-05 15:53:20,705 p=98370 u=dan n=ansible | TASK [Install tools name=['git', 'docker', 'docker-compose', 'ruby-full', 'build-essential', 'zlib1g-dev']] *************************************************************
+2023-03-05 15:53:21,887 p=98370 u=dan n=ansible | ok: [ec2-54-186-211-240.us-west-2.compute.amazonaws.com]
+2023-03-05 15:53:21,900 p=98370 u=dan n=ansible | TASK [Pull the latest main branch from github repo=https://github.com/oconnordaniel/dans-homepage.git, dest=/home/ubuntu/dans-homepage] *********************************
+2023-03-05 15:53:23,323 p=98370 u=dan n=ansible | changed: [ec2-54-186-211-240.us-west-2.compute.amazonaws.com]
+2023-03-05 15:53:23,335 p=98370 u=dan n=ansible | TASK [community.docker.docker_compose project_name=dans-homepage, definition={'version': '2', 'services': {'dans-homepage': {'image': 'nginx:stable-alpine', 'volumes': ['/home/ubuntu/dans-homepage/_site/:/usr/share/nginx/html/'], 'ports': ['80:80']}}}] ***
+2023-03-05 15:53:24,146 p=98370 u=dan n=ansible | ok: [ec2-54-186-211-240.us-west-2.compute.amazonaws.com]
+2023-03-05 15:53:24,174 p=98370 u=dan n=ansible | RUNNING HANDLER [build_server executable=/bin/bash, chdir=/home/ubuntu/dans-homepage, _raw_params=JEKYLL_ENV=production bundle exec jekyll b] ***************************
+2023-03-05 15:53:24,616 p=98370 u=dan n=ansible | fatal: [ec2-54-186-211-240.us-west-2.compute.amazonaws.com]: FAILED! => changed=true 
+  cmd: JEKYLL_ENV=production bundle exec jekyll b
+  delta: '0:00:00.003749'
+  end: '2023-03-05 22:53:24.601177'
+  msg: non-zero return code
+  rc: 127
+  start: '2023-03-05 22:53:24.597428'
+  stderr: '/bin/bash: line 1: bundle: command not found'
+  stderr_lines: <omitted>
+  stdout: ''
+  stdout_lines: <omitted>
+2023-03-05 15:53:24,618 p=98370 u=dan n=ansible | PLAY RECAP **************************************************************************************************************************************************************
+2023-03-05 15:53:24,618 p=98370 u=dan n=ansible | ec2-54-186-211-240.us-west-2.compute.amazonaws.com : ok=4    changed=1    unreachable=0    failed=1    skipped=0    rescued=0    ignored=0   
