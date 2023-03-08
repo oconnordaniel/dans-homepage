@@ -45,30 +45,48 @@ That was simple. And best of all that means I don't need to re-start or rebuild 
 The next step is to have a task that tells my instance to git pull and if there are changes, run the `bundle jekyll` command to put format the post and put it in the `_site` folder.
 
 ```yml
-hosts: ip.of.ec2.instance
+- hosts: all
   tasks: 
-    name: Pull the latest main branch from github
-      git: 
-        pull 
-      notify: build server
+    - name: Pull the latest main branch from github
+      ansible.builtin.git:
+        repo: 'https://github.com/oconnordaniel/dans-homepage.git'
+        dest: /home/ubuntu/dans-homepage
+      notify: build_server
 
-  handler:
-    tasks: 
-      name: If git pull shows a change, build site
-        cmd: |
-          JEKYLL_ENV=production bundle exec jekyll b
+    - community.docker.docker_compose:
+        project_name: dans-homepage
+        definition:
+          version: '2'
+          services:
+            dans-homepage:
+              image: nginx:stable-alpine
+              volumes:
+                - /home/ubuntu/dans-homepage/_site/:/usr/share/nginx/html/
+              ports:
+                - "80:80"
 
-      name: restart docker if needed? 
+  handlers:
+    - name: build_server
+      ansible.builtin.shell: 
+        executable: /bin/bash
+        cmd: JEKYLL_ENV=production /home/ubuntu/gems/bin/bundle exec jekyll b
+        chdir: /home/ubuntu/dans-homepage
+      
+      community.docker.docker_container:
+        name: dans-homepage_dans-homepage_1
+        restart: true
 ```
 
-Do do this I'll also need:
+And ta-da! Once I'm done making a post in the _post folder, I can `git push` it then run
 
-- An `invintory` file.
-- An `ansible.cgf` file.
-- Python
-- Python venv
-- pip install ansible
+``` bash
+ansible-playbook ansible-play/deploy.yml
+```
+
+and my site is updated.
+
+Note: There's a little more in the `deploy.yml` play. But the rest is getting Jekyll and Bundler setup. You can see that at [the repo](https://github.com/oconnordaniel/dans-homepage.git)
 
 ### Step 3. Github action
 
-
+Next step will be to get gethub actions to run my ansible play. But that's another post.

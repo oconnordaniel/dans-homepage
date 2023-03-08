@@ -19,3 +19,8 @@ Gemfile.lock
 # npm dependencies
 node_modules
 package-lock.json
+
+# Ansible 
+ansible
+ansible-play/logs
+ansible-play/logs

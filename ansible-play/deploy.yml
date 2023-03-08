@@ -1,0 +1,66 @@
+--- 
+
+- hosts: all
+
+  tasks: 
+    - name: Install tools
+      become: true
+      apt:
+        name:
+          - git
+          - docker
+          - docker-compose
+          - ruby-full 
+          - build-essential 
+          - zlib1g-dev
+
+    - name: Install jekyll
+      become: true
+      community.general.gem:
+        name: jekyll 
+        state: latest
+
+    - name: Install bundler
+      become: true
+      community.general.gem:
+        name: bundler
+        state: latest
+
+    - name: Setup bundle
+      ansible.builtin.shell: 
+        cmd: /home/ubuntu/gems/bin/bundle
+        chdir: /home/ubuntu/dans-homepage
+        executable: /bin/bash
+
+    - name: Pull the latest main branch from github
+      ansible.builtin.git:
+        repo: 'https://github.com/oconnordaniel/dans-homepage.git'
+        dest: /home/ubuntu/dans-homepage
+      notify: build_server
+
+    - community.docker.docker_compose:
+        project_name: dans-homepage
+        definition:
+          version: '2'
+          services:
+            dans-homepage:
+              image: nginx:stable-alpine
+              volumes:
+                - /home/ubuntu/dans-homepage/_site/:/usr/share/nginx/html/
+              ports:
+                - "80:80"
+
+  handlers:
+    - name: build_server
+      ansible.builtin.shell: 
+        cmd: JEKYLL_ENV=production /home/ubuntu/gems/bin/bundle exec jekyll b
+        chdir: /home/ubuntu/dans-homepage
+        executable: /bin/bash
+      notify: restart_docker
+
+    - name: restart_docker
+      community.docker.docker_container:
+        name: dans-homepage_dans-homepage_1
+        restart: true
+
+
