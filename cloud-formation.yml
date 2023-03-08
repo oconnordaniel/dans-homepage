@@ -1,0 +1,11 @@
+--- 
+
+### from video [link](https://www.youtube.com/watch?v=9KWgTuQGEGQ&t=539s)
+# Create cluster
+# aws ecs create-cluster --cluster-name dans-homepage
+# aws ecs list-clusters
+# 
+# Create Task definition
+# 
+
+
