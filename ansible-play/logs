@@ -777,3 +777,1190 @@ The offending line appears to be:
 2023-03-05 16:47:00,645 p=27088 u=dan n=ansible | changed: [ec2-54-186-211-240.us-west-2.compute.amazonaws.com]
 2023-03-05 16:47:00,660 p=27088 u=dan n=ansible | PLAY RECAP **************************************************************************************************************************************************************
 2023-03-05 16:47:00,660 p=27088 u=dan n=ansible | ec2-54-186-211-240.us-west-2.compute.amazonaws.com : ok=9    changed=4    unreachable=0    failed=0    skipped=0    rescued=0    ignored=0   
+2023-03-08 22:32:27,105 p=49968 u=dan n=ansible | PLAY [all] ****************************************************************************************************************************************************
+2023-03-08 22:32:27,112 p=49968 u=dan n=ansible | TASK [Gathering Facts ] ***************************************************************************************************************************************
+2023-03-08 22:32:30,176 p=49968 u=dan n=ansible | ok: [ec2-54-186-211-240.us-west-2.compute.amazonaws.com]
+2023-03-08 22:32:30,200 p=49968 u=dan n=ansible | TASK [Install tools name=['git', 'docker', 'docker-compose', 'ruby-full', 'build-essential', 'zlib1g-dev']] ***************************************************
+2023-03-08 22:32:31,786 p=49968 u=dan n=ansible | ok: [ec2-54-186-211-240.us-west-2.compute.amazonaws.com]
+2023-03-08 22:32:31,794 p=49968 u=dan n=ansible | TASK [Install jekyll name=jekyll, state=latest] ***************************************************************************************************************
+2023-03-08 22:32:33,734 p=49968 u=dan n=ansible | ok: [ec2-54-186-211-240.us-west-2.compute.amazonaws.com]
+2023-03-08 22:32:33,740 p=49968 u=dan n=ansible | TASK [Install bundler name=bundler, state=latest] *************************************************************************************************************
+2023-03-08 22:32:35,794 p=49968 u=dan n=ansible | changed: [ec2-54-186-211-240.us-west-2.compute.amazonaws.com]
+2023-03-08 22:32:35,805 p=49968 u=dan n=ansible | TASK [Setup bundle chdir=/home/ubuntu/dans-homepage, executable=/bin/bash, _raw_params=/home/ubuntu/gems/bin/bundle] ******************************************
+2023-03-08 22:32:36,726 p=49968 u=dan n=ansible | changed: [ec2-54-186-211-240.us-west-2.compute.amazonaws.com]
+2023-03-08 22:32:36,736 p=49968 u=dan n=ansible | TASK [Pull the latest main branch from github repo=https://github.com/oconnordaniel/dans-homepage.git, dest=/home/ubuntu/dans-homepage] ***********************
+2023-03-08 22:32:38,262 p=49968 u=dan n=ansible | changed: [ec2-54-186-211-240.us-west-2.compute.amazonaws.com]
+2023-03-08 22:32:38,272 p=49968 u=dan n=ansible | TASK [community.docker.docker_compose project_name=dans-homepage, definition={'version': '2', 'services': {'dans-homepage': {'image': 'nginx:stable-alpine', 'volumes': ['/home/ubuntu/dans-homepage/_site/:/usr/share/nginx/html/'], 'ports': ['80:80']}}}] ***
+2023-03-08 22:32:39,825 p=49968 u=dan n=ansible | changed: [ec2-54-186-211-240.us-west-2.compute.amazonaws.com]
+2023-03-08 22:32:39,846 p=49968 u=dan n=ansible | RUNNING HANDLER [build_server chdir=/home/ubuntu/dans-homepage, executable=/bin/bash, _raw_params=JEKYLL_ENV=production /home/ubuntu/gems/bin/bundle exec jekyll b] ***
+2023-03-08 22:32:42,503 p=49968 u=dan n=ansible | changed: [ec2-54-186-211-240.us-west-2.compute.amazonaws.com]
+2023-03-08 22:32:42,512 p=49968 u=dan n=ansible | RUNNING HANDLER [restart_docker name=dans-homepage_dans-homepage_1, restart=True] *****************************************************************************
+2023-03-08 22:32:43,913 p=49968 u=dan n=ansible | changed: [ec2-54-186-211-240.us-west-2.compute.amazonaws.com]
+2023-03-08 22:32:43,929 p=49968 u=dan n=ansible | PLAY RECAP ****************************************************************************************************************************************************
+2023-03-08 22:32:43,929 p=49968 u=dan n=ansible | ec2-54-186-211-240.us-west-2.compute.amazonaws.com : ok=9    changed=6    unreachable=0    failed=0    skipped=0    rescued=0    ignored=0   
+2023-03-08 22:38:53,283 p=53578 u=dan n=ansible | PLAY [all] ****************************************************************************************************************************************************
+2023-03-08 22:38:53,289 p=53578 u=dan n=ansible | TASK [Gathering Facts ] ***************************************************************************************************************************************
+2023-03-08 22:38:55,977 p=53578 u=dan n=ansible | ok: [ec2-54-186-211-240.us-west-2.compute.amazonaws.com]
+2023-03-08 22:38:56,002 p=53578 u=dan n=ansible | TASK [Install tools name=['git', 'docker', 'docker-compose', 'ruby-full', 'build-essential', 'zlib1g-dev']] ***************************************************
+2023-03-08 22:38:57,205 p=53578 u=dan n=ansible | ok: [ec2-54-186-211-240.us-west-2.compute.amazonaws.com]
+2023-03-08 22:38:57,214 p=53578 u=dan n=ansible | TASK [Install jekyll name=jekyll, state=latest] ***************************************************************************************************************
+2023-03-08 22:38:58,807 p=53578 u=dan n=ansible | ok: [ec2-54-186-211-240.us-west-2.compute.amazonaws.com]
+2023-03-08 22:38:58,816 p=53578 u=dan n=ansible | TASK [Install bundler name=bundler, state=latest] *************************************************************************************************************
+2023-03-08 22:39:00,213 p=53578 u=dan n=ansible | ok: [ec2-54-186-211-240.us-west-2.compute.amazonaws.com]
+2023-03-08 22:39:00,219 p=53578 u=dan n=ansible | TASK [Setup bundle chdir=/home/ubuntu/dans-homepage, executable=/bin/bash, _raw_params=/home/ubuntu/gems/bin/bundle] ******************************************
+2023-03-08 22:39:01,016 p=53578 u=dan n=ansible | changed: [ec2-54-186-211-240.us-west-2.compute.amazonaws.com]
+2023-03-08 22:39:01,022 p=53578 u=dan n=ansible | TASK [Pull the latest main branch from github repo=https://github.com/oconnordaniel/dans-homepage.git, dest=/home/ubuntu/dans-homepage] ***********************
+2023-03-08 22:39:02,245 p=53578 u=dan n=ansible | ok: [ec2-54-186-211-240.us-west-2.compute.amazonaws.com]
+2023-03-08 22:39:02,251 p=53578 u=dan n=ansible | TASK [community.docker.docker_compose project_name=dans-homepage, definition={'version': '2', 'services': {'dans-homepage': {'image': 'nginx:stable-alpine', 'volumes': ['/home/ubuntu/dans-homepage/_site/:/usr/share/nginx/html/'], 'ports': ['80:80']}}}] ***
+2023-03-08 22:39:02,992 p=53578 u=dan n=ansible | ok: [ec2-54-186-211-240.us-west-2.compute.amazonaws.com]
+2023-03-08 22:39:03,025 p=53578 u=dan n=ansible | PLAY RECAP ****************************************************************************************************************************************************
+2023-03-08 22:39:03,025 p=53578 u=dan n=ansible | ec2-54-186-211-240.us-west-2.compute.amazonaws.com : ok=7    changed=1    unreachable=0    failed=0    skipped=0    rescued=0    ignored=0   
+2023-03-09 20:04:54,505 p=20762 u=dan n=ansible | PLAY [all] ************************************************************************************************************************************
+2023-03-09 20:04:54,513 p=20762 u=dan n=ansible | TASK [Gathering Facts ] ***********************************************************************************************************************
+2023-03-09 20:04:56,088 p=20762 u=dan n=ansible | [WARNING]: Unhandled error in Python interpreter discovery for host dans-jekyll.lan: Failed to connect to the host via ssh: Warning:
+Permanently added 'dans-jekyll.lan' (ED25519) to the list of known hosts.  no such identity: /home/dan/.ssh/id_ed25519-dans-ke: No such file
+or directory  dan@dans-jekyll.lan: Permission denied (publickey).
+
+2023-03-09 20:04:56,311 p=20762 u=dan n=ansible | fatal: [dans-jekyll.lan]: UNREACHABLE! => changed=false 
+  msg: |-
+    Data could not be sent to remote host "dans-jekyll.lan". Make sure this host can be reached over ssh: no such identity: /home/dan/.ssh/id_ed25519-dans-ke: No such file or directory
+    dan@dans-jekyll.lan: Permission denied (publickey).
+  unreachable: true
+2023-03-09 20:04:56,312 p=20762 u=dan n=ansible | PLAY RECAP ************************************************************************************************************************************
+2023-03-09 20:04:56,312 p=20762 u=dan n=ansible | dans-jekyll.lan            : ok=0    changed=0    unreachable=1    failed=0    skipped=0    rescued=0    ignored=0   
+2023-03-09 20:05:07,238 p=20842 u=dan n=ansible | PLAY [all] ************************************************************************************************************************************
+2023-03-09 20:05:07,244 p=20842 u=dan n=ansible | TASK [Gathering Facts ] ***********************************************************************************************************************
+2023-03-09 20:05:08,783 p=20842 u=dan n=ansible | ok: [dans-jekyll.lan]
+2023-03-09 20:05:08,804 p=20842 u=dan n=ansible | TASK [Install tools name=['git', 'docker', 'docker-compose', 'ruby-full', 'build-essential', 'zlib1g-dev']] ***********************************
+2023-03-09 20:05:31,742 p=20842 u=dan n=ansible | changed: [dans-jekyll.lan]
+2023-03-09 20:05:31,748 p=20842 u=dan n=ansible | TASK [Install jekyll name=jekyll, state=latest] ***********************************************************************************************
+2023-03-09 20:06:22,712 p=20842 u=dan n=ansible | changed: [dans-jekyll.lan]
+2023-03-09 20:06:22,718 p=20842 u=dan n=ansible | TASK [Install bundler name=bundler, state=latest] *********************************************************************************************
+2023-03-09 20:06:24,944 p=20842 u=dan n=ansible | changed: [dans-jekyll.lan]
+2023-03-09 20:06:24,949 p=20842 u=dan n=ansible | TASK [Setup bundle chdir=/home/ubuntu/dans-homepage, executable=/bin/bash, _raw_params=/home/ubuntu/gems/bin/bundle] **************************
+2023-03-09 20:06:25,230 p=20842 u=dan n=ansible | fatal: [dans-jekyll.lan]: FAILED! => changed=false 
+  cmd: /home/ubuntu/gems/bin/bundle
+  delta: null
+  end: null
+  msg: 'Unable to change directory before execution: [Errno 2] No such file or directory: b''/home/ubuntu/dans-homepage'''
+  rc: null
+  start: null
+  stderr: ''
+  stderr_lines: <omitted>
+  stdout: ''
+  stdout_lines: <omitted>
+2023-03-09 20:06:25,230 p=20842 u=dan n=ansible | PLAY RECAP ************************************************************************************************************************************
+2023-03-09 20:06:25,230 p=20842 u=dan n=ansible | dans-jekyll.lan            : ok=4    changed=3    unreachable=0    failed=1    skipped=0    rescued=0    ignored=0   
+2023-03-09 20:07:18,738 p=21308 u=dan n=ansible | PLAY [all] ************************************************************************************************************************************
+2023-03-09 20:07:18,743 p=21308 u=dan n=ansible | TASK [Gathering Facts ] ***********************************************************************************************************************
+2023-03-09 20:07:19,902 p=21308 u=dan n=ansible | ok: [dans-jekyll.lan]
+2023-03-09 20:07:19,925 p=21308 u=dan n=ansible | TASK [Install tools name=['git', 'docker', 'docker-compose', 'ruby-full', 'build-essential', 'zlib1g-dev']] ***********************************
+2023-03-09 20:07:20,984 p=21308 u=dan n=ansible | ok: [dans-jekyll.lan]
+2023-03-09 20:07:20,990 p=21308 u=dan n=ansible | TASK [Install jekyll name=jekyll, state=latest] ***********************************************************************************************
+2023-03-09 20:07:22,515 p=21308 u=dan n=ansible | ok: [dans-jekyll.lan]
+2023-03-09 20:07:22,519 p=21308 u=dan n=ansible | TASK [Install bundler name=bundler, state=latest] *********************************************************************************************
+2023-03-09 20:07:23,937 p=21308 u=dan n=ansible | ok: [dans-jekyll.lan]
+2023-03-09 20:07:23,942 p=21308 u=dan n=ansible | TASK [Setup bundle chdir=/home/ubuntu/dans-homepage, executable=/bin/bash, _raw_params=/home/ubuntu/gems/bin/bundle] **************************
+2023-03-09 20:07:24,243 p=21308 u=dan n=ansible | fatal: [dans-jekyll.lan]: FAILED! => changed=false 
+  cmd: /home/ubuntu/gems/bin/bundle
+  delta: null
+  end: null
+  msg: 'Unable to change directory before execution: [Errno 2] No such file or directory: b''/home/ubuntu/dans-homepage'''
+  rc: null
+  start: null
+  stderr: ''
+  stderr_lines: <omitted>
+  stdout: ''
+  stdout_lines: <omitted>
+2023-03-09 20:07:24,244 p=21308 u=dan n=ansible | PLAY RECAP ************************************************************************************************************************************
+2023-03-09 20:07:24,244 p=21308 u=dan n=ansible | dans-jekyll.lan            : ok=4    changed=0    unreachable=0    failed=1    skipped=0    rescued=0    ignored=0   
+2023-03-09 20:07:53,764 p=21499 u=dan n=ansible | PLAY [all] ************************************************************************************************************************************
+2023-03-09 20:07:53,769 p=21499 u=dan n=ansible | TASK [Gathering Facts ] ***********************************************************************************************************************
+2023-03-09 20:07:54,942 p=21499 u=dan n=ansible | ok: [dans-jekyll.lan]
+2023-03-09 20:07:54,963 p=21499 u=dan n=ansible | TASK [Install tools name=['git', 'docker', 'docker-compose', 'ruby-full', 'build-essential', 'zlib1g-dev']] ***********************************
+2023-03-09 20:07:56,075 p=21499 u=dan n=ansible | ok: [dans-jekyll.lan]
+2023-03-09 20:07:56,082 p=21499 u=dan n=ansible | TASK [Install jekyll name=jekyll, state=latest] ***********************************************************************************************
+2023-03-09 20:07:57,665 p=21499 u=dan n=ansible | ok: [dans-jekyll.lan]
+2023-03-09 20:07:57,674 p=21499 u=dan n=ansible | TASK [Install bundler name=bundler, state=latest] *********************************************************************************************
+2023-03-09 20:07:59,156 p=21499 u=dan n=ansible | ok: [dans-jekyll.lan]
+2023-03-09 20:07:59,165 p=21499 u=dan n=ansible | TASK [Setup bundle chdir=/home/dan/dans-homepage, executable=/bin/bash, _raw_params=/home/dan/gems/bin/bundle] ********************************
+2023-03-09 20:08:03,984 p=21499 u=dan n=ansible | fatal: [dans-jekyll.lan]: FAILED! => changed=true 
+  cmd: /home/dan/gems/bin/bundle
+  delta: '0:00:04.518557'
+  end: '2023-03-09 20:08:03.959601'
+  msg: non-zero return code
+  rc: 1
+  start: '2023-03-09 20:07:59.441044'
+  stderr: |-
+    Retrying download gem from https://rubygems.org/ due to error (2/4): Bundler::PermissionError There was an error while trying to write to `/var/lib/gems/3.0.0/cache/racc-1.6.2.gem`. It is likely that you need to grant write permissions for that path.
+    Retrying download gem from https://rubygems.org/ due to error (3/4): Bundler::PermissionError There was an error while trying to write to `/var/lib/gems/3.0.0/cache/racc-1.6.2.gem`. It is likely that you need to grant write permissions for that path.
+    Retrying download gem from https://rubygems.org/ due to error (4/4): Bundler::PermissionError There was an error while trying to write to `/var/lib/gems/3.0.0/cache/racc-1.6.2.gem`. It is likely that you need to grant write permissions for that path.
+    Retrying download gem from https://rubygems.org/ due to error (2/4): Bundler::PermissionError There was an error while trying to write to `/var/lib/gems/3.0.0/cache/parallel-1.22.1.gem`. It is likely that you need to grant write permissions for that path.
+    Retrying download gem from https://rubygems.org/ due to error (3/4): Bundler::PermissionError There was an error while trying to write to `/var/lib/gems/3.0.0/cache/parallel-1.22.1.gem`. It is likely that you need to grant write permissions for that path.
+    Retrying download gem from https://rubygems.org/ due to error (2/4): Bundler::PermissionError There was an error while trying to write to `/var/lib/gems/3.0.0/cache/google-protobuf-3.22.0-x86_64-linux.gem`. It is likely that you need to grant write permissions for that path.
+    Retrying download gem from https://rubygems.org/ due to error (4/4): Bundler::PermissionError There was an error while trying to write to `/var/lib/gems/3.0.0/cache/parallel-1.22.1.gem`. It is likely that you need to grant write permissions for that path.
+    Retrying download gem from https://rubygems.org/ due to error (2/4): Bundler::PermissionError There was an error while trying to write to `/var/lib/gems/3.0.0/cache/rainbow-3.1.1.gem`. It is likely that you need to grant write permissions for that path.
+    Retrying download gem from https://rubygems.org/ due to error (3/4): Bundler::PermissionError There was an error while trying to write to `/var/lib/gems/3.0.0/cache/rainbow-3.1.1.gem`. It is likely that you need to grant write permissions for that path.
+    Retrying download gem from https://rubygems.org/ due to error (4/4): Bundler::PermissionError There was an error while trying to write to `/var/lib/gems/3.0.0/cache/rainbow-3.1.1.gem`. It is likely that you need to grant write permissions for that path.
+    Retrying download gem from https://rubygems.org/ due to error (3/4): Bundler::PermissionError There was an error while trying to write to `/var/lib/gems/3.0.0/cache/google-protobuf-3.22.0-x86_64-linux.gem`. It is likely that you need to grant write permissions for that path.
+    Retrying download gem from https://rubygems.org/ due to error (2/4): Bundler::PermissionError There was an error while trying to write to `/var/lib/gems/3.0.0/cache/yell-2.2.2.gem`. It is likely that you need to grant write permissions for that path.
+    Retrying download gem from https://rubygems.org/ due to error (3/4): Bundler::PermissionError There was an error while trying to write to `/var/lib/gems/3.0.0/cache/yell-2.2.2.gem`. It is likely that you need to grant write permissions for that path.
+    Retrying download gem from https://rubygems.org/ due to error (4/4): Bundler::PermissionError There was an error while trying to write to `/var/lib/gems/3.0.0/cache/yell-2.2.2.gem`. It is likely that you need to grant write permissions for that path.
+    Retrying download gem from https://rubygems.org/ due to error (4/4): Bundler::PermissionError There was an error while trying to write to `/var/lib/gems/3.0.0/cache/google-protobuf-3.22.0-x86_64-linux.gem`. It is likely that you need to grant write permissions for that path.
+    Retrying download gem from https://rubygems.org/ due to error (2/4): Bundler::PermissionError There was an error while trying to write to `/var/lib/gems/3.0.0/cache/webrick-1.8.1.gem`. It is likely that you need to grant write permissions for that path.
+    Retrying download gem from https://rubygems.org/ due to error (3/4): Bundler::PermissionError There was an error while trying to write to `/var/lib/gems/3.0.0/cache/webrick-1.8.1.gem`. It is likely that you need to grant write permissions for that path.
+    Retrying download gem from https://rubygems.org/ due to error (4/4): Bundler::PermissionError There was an error while trying to write to `/var/lib/gems/3.0.0/cache/webrick-1.8.1.gem`. It is likely that you need to grant write permissions for that path.
+    Retrying download gem from https://rubygems.org/ due to error (2/4): Bundler::PermissionError There was an error while trying to write to `/var/lib/gems/3.0.0/cache/jekyll-paginate-1.1.0.gem`. It is likely that you need to grant write permissions for that path.
+    Retrying download gem from https://rubygems.org/ due to error (3/4): Bundler::PermissionError There was an error while trying to write to `/var/lib/gems/3.0.0/cache/jekyll-paginate-1.1.0.gem`. It is likely that you need to grant write permissions for that path.
+    Retrying download gem from https://rubygems.org/ due to error (4/4): Bundler::PermissionError There was an error while trying to write to `/var/lib/gems/3.0.0/cache/jekyll-paginate-1.1.0.gem`. It is likely that you need to grant write permissions for that path.
+    --- ERROR REPORT TEMPLATE -------------------------------------------------------
+  
+    ```
+    Gem::FilePermissionError: You don't have write permissions for the /var/lib/gems/3.0.0 directory.
+      /usr/lib/ruby/vendor_ruby/rubygems/installer.rb:715:in `verify_gem_home'
+      /usr/lib/ruby/vendor_ruby/rubygems/installer.rb:906:in `pre_install_checks'
+      /var/lib/gems/3.0.0/gems/bundler-2.4.7/lib/bundler/rubygems_gem_installer.rb:64:in `pre_install_checks'
+      /var/lib/gems/3.0.0/gems/bundler-2.4.7/lib/bundler/rubygems_gem_installer.rb:12:in `install'
+      /var/lib/gems/3.0.0/gems/bundler-2.4.7/lib/bundler/source/rubygems.rb:200:in `install'
+      /var/lib/gems/3.0.0/gems/bundler-2.4.7/lib/bundler/installer/gem_installer.rb:54:in `install'
+      /var/lib/gems/3.0.0/gems/bundler-2.4.7/lib/bundler/installer/gem_installer.rb:16:in `install_from_spec'
+      /var/lib/gems/3.0.0/gems/bundler-2.4.7/lib/bundler/installer/parallel_installer.rb:167:in `do_install'
+      /var/lib/gems/3.0.0/gems/bundler-2.4.7/lib/bundler/installer/parallel_installer.rb:158:in `block in worker_pool'
+      /var/lib/gems/3.0.0/gems/bundler-2.4.7/lib/bundler/worker.rb:62:in `apply_func'
+      /var/lib/gems/3.0.0/gems/bundler-2.4.7/lib/bundler/worker.rb:57:in `block in process_queue'
+      /var/lib/gems/3.0.0/gems/bundler-2.4.7/lib/bundler/worker.rb:54:in `loop'
+      /var/lib/gems/3.0.0/gems/bundler-2.4.7/lib/bundler/worker.rb:54:in `process_queue'
+      /var/lib/gems/3.0.0/gems/bundler-2.4.7/lib/bundler/worker.rb:90:in `block (2 levels) in create_threads'
+    Errno::EACCES: Permission denied @ rb_sysopen - /var/lib/gems/3.0.0/bundler.lock
+      /var/lib/gems/3.0.0/gems/bundler-2.4.7/lib/bundler/process_lock.rb:9:in `initialize'
+      /var/lib/gems/3.0.0/gems/bundler-2.4.7/lib/bundler/process_lock.rb:9:in `open'
+      /var/lib/gems/3.0.0/gems/bundler-2.4.7/lib/bundler/process_lock.rb:9:in `lock'
+      /var/lib/gems/3.0.0/gems/bundler-2.4.7/lib/bundler/installer.rb:71:in `run'
+      /var/lib/gems/3.0.0/gems/bundler-2.4.7/lib/bundler/installer.rb:23:in `install'
+      /var/lib/gems/3.0.0/gems/bundler-2.4.7/lib/bundler/cli/install.rb:62:in `run'
+      /var/lib/gems/3.0.0/gems/bundler-2.4.7/lib/bundler/cli.rb:261:in `block in install'
+      /var/lib/gems/3.0.0/gems/bundler-2.4.7/lib/bundler/settings.rb:131:in `temporary'
+      /var/lib/gems/3.0.0/gems/bundler-2.4.7/lib/bundler/cli.rb:260:in `install'
+      /var/lib/gems/3.0.0/gems/bundler-2.4.7/lib/bundler/vendor/thor/lib/thor/command.rb:27:in `run'
+      /var/lib/gems/3.0.0/gems/bundler-2.4.7/lib/bundler/vendor/thor/lib/thor/invocation.rb:127:in `invoke_command'
+      /var/lib/gems/3.0.0/gems/bundler-2.4.7/lib/bundler/vendor/thor/lib/thor.rb:392:in `dispatch'
+      /var/lib/gems/3.0.0/gems/bundler-2.4.7/lib/bundler/cli.rb:34:in `dispatch'
+      /var/lib/gems/3.0.0/gems/bundler-2.4.7/lib/bundler/vendor/thor/lib/thor/base.rb:485:in `start'
+      /var/lib/gems/3.0.0/gems/bundler-2.4.7/lib/bundler/cli.rb:28:in `start'
+      /var/lib/gems/3.0.0/gems/bundler-2.4.7/exe/bundle:45:in `block in <top (required)>'
+      /var/lib/gems/3.0.0/gems/bundler-2.4.7/lib/bundler/friendly_errors.rb:117:in `with_friendly_errors'
+      /var/lib/gems/3.0.0/gems/bundler-2.4.7/exe/bundle:33:in `<top (required)>'
+      /home/dan/gems/bin/bundle:25:in `load'
+      /home/dan/gems/bin/bundle:25:in `<main>'
+  
+    ```
+  
+    ## Environment
+  
+    ```
+    Bundler       2.4.7
+      Platforms   ruby, x86_64-linux
+    Ruby          3.0.2p107 (2021-07-07 revision 0db68f023372b634603c74fca94588b457be084c) [x86_64-linux]
+      Full Path   /usr/bin/ruby3.0
+      Config Dir  /etc
+    RubyGems      3.3.5
+      Gem Home    /var/lib/gems/3.0.0
+      Gem Path    /home/dan/.local/share/gem/ruby/3.0.0:/var/lib/gems/3.0.0:/usr/local/lib/ruby/gems/3.0.0:/usr/lib/ruby/gems/3.0.0:/usr/lib/x86_64-linux-gnu/ruby/gems/3.0.0:/usr/share/rubygems-integration/3.0.0:/usr/share/rubygems-integration/all:/usr/lib/x86_64-linux-gnu/rubygems-integration/3.0.0
+      User Home   /home/dan
+      User Path   /home/dan/.local/share/gem/ruby/3.0.0
+      Bin Dir     /usr/local/bin
+    OpenSSL
+      Compiled    OpenSSL 3.0.2 15 Mar 2022
+      Loaded      OpenSSL 3.0.2 15 Mar 2022
+      Cert File   /usr/lib/ssl/cert.pem
+      Cert Dir    /usr/lib/ssl/certs
+    Tools
+      Git         2.34.1
+      RVM         not installed
+      rbenv       not installed
+      chruby      not installed
+    ```
+  
+    ## Bundler Build Metadata
+  
+    ```
+    Built At          2023-02-15
+    Git SHA           5d717a27e0
+    Released Version  true
+    ```
+  
+    ## Gemfile
+  
+    ### Gemfile
+  
+    ```ruby
+    # frozen_string_literal: true
+  
+    source "https://rubygems.org"
+  
+    gem "jekyll-theme-chirpy", "~> 5.5", ">= 5.5.2"
+  
+    group :test do
+      gem "html-proofer", "~> 3.18"
+    end
+  
+    # Windows and JRuby does not include zoneinfo files, so bundle the tzinfo-data gem
+    # and associated library.
+    platforms :mingw, :x64_mingw, :mswin, :jruby do
+      gem "tzinfo", ">= 1", "< 3"
+      gem "tzinfo-data"
+    end
+  
+    # Performance-booster for watching directories on Windows
+    gem "wdm", "~> 0.1.1", :platforms => [:mingw, :x64_mingw, :mswin]
+  
+    # Lock `http_parser.rb` gem to `v0.6.x` on JRuby builds since newer versions of the gem
+    # do not have a Java counterpart.
+    gem "http_parser.rb", "~> 0.6.0", :platforms => [:jruby]
+  
+    # Lock jekyll-sass-converter to 2.x on Linux-musl
+    if RUBY_PLATFORM =~ /linux-musl/
+      gem "jekyll-sass-converter", "~> 2.0"
+    end
+    ```
+  
+    ### Gemfile.lock
+  
+    ```
+    GEM
+      remote: https://rubygems.org/
+      specs:
+        addressable (2.8.1)
+          public_suffix (>= 2.0.2, < 6.0)
+        colorator (1.1.0)
+        concurrent-ruby (1.2.2)
+        em-websocket (0.5.3)
+          eventmachine (>= 0.12.9)
+          http_parser.rb (~> 0)
+        ethon (0.16.0)
+          ffi (>= 1.15.0)
+        eventmachine (1.2.7)
+        ffi (1.15.5)
+        forwardable-extended (2.6.0)
+        google-protobuf (3.22.0-x86_64-linux)
+        html-proofer (3.19.4)
+          addressable (~> 2.3)
+          mercenary (~> 0.3)
+          nokogiri (~> 1.13)
+          parallel (~> 1.10)
+          rainbow (~> 3.0)
+          typhoeus (~> 1.3)
+          yell (~> 2.0)
+        http_parser.rb (0.8.0)
+        i18n (1.12.0)
+          concurrent-ruby (~> 1.0)
+        jekyll (4.3.2)
+          addressable (~> 2.4)
+          colorator (~> 1.0)
+          em-websocket (~> 0.5)
+          i18n (~> 1.0)
+          jekyll-sass-converter (>= 2.0, < 4.0)
+          jekyll-watch (~> 2.0)
+          kramdown (~> 2.3, >= 2.3.1)
+          kramdown-parser-gfm (~> 1.0)
+          liquid (~> 4.0)
+          mercenary (>= 0.3.6, < 0.5)
+          pathutil (~> 0.9)
+          rouge (>= 3.0, < 5.0)
+          safe_yaml (~> 1.0)
+          terminal-table (>= 1.8, < 4.0)
+          webrick (~> 1.7)
+        jekyll-archives (2.2.1)
+          jekyll (>= 3.6, < 5.0)
+        jekyll-paginate (1.1.0)
+        jekyll-redirect-from (0.16.0)
+          jekyll (>= 3.3, < 5.0)
+        jekyll-sass-converter (3.0.0)
+          sass-embedded (~> 1.54)
+        jekyll-seo-tag (2.8.0)
+          jekyll (>= 3.8, < 5.0)
+        jekyll-sitemap (1.4.0)
+          jekyll (>= 3.7, < 5.0)
+        jekyll-theme-chirpy (5.5.2)
+          jekyll (~> 4.3)
+          jekyll-archives (~> 2.2)
+          jekyll-paginate (~> 1.1)
+          jekyll-redirect-from (~> 0.16)
+          jekyll-seo-tag (~> 2.7)
+          jekyll-sitemap (~> 1.4)
+        jekyll-watch (2.2.1)
+          listen (~> 3.0)
+        kramdown (2.4.0)
+          rexml
+        kramdown-parser-gfm (1.1.0)
+          kramdown (~> 2.0)
+        liquid (4.0.4)
+        listen (3.8.0)
+          rb-fsevent (~> 0.10, >= 0.10.3)
+          rb-inotify (~> 0.9, >= 0.9.10)
+        mercenary (0.4.0)
+        nokogiri (1.14.2-x86_64-linux)
+          racc (~> 1.4)
+        parallel (1.22.1)
+        pathutil (0.16.2)
+          forwardable-extended (~> 2.6)
+        public_suffix (5.0.1)
+        racc (1.6.2)
+        rainbow (3.1.1)
+        rake (13.0.6)
+        rb-fsevent (0.11.2)
+        rb-inotify (0.10.1)
+          ffi (~> 1.0)
+        rexml (3.2.5)
+        rouge (4.1.0)
+        safe_yaml (1.0.5)
+        sass-embedded (1.58.3)
+          google-protobuf (~> 3.21)
+          rake (>= 10.0.0)
+        terminal-table (3.0.2)
+          unicode-display_width (>= 1.1.1, < 3)
+        typhoeus (1.4.0)
+          ethon (>= 0.9.0)
+        unicode-display_width (2.4.2)
+        webrick (1.8.1)
+        yell (2.2.2)
+  
+    PLATFORMS
+      x86_64-linux
+  
+    DEPENDENCIES
+      html-proofer (~> 3.18)
+      http_parser.rb (~> 0.6.0)
+      jekyll-theme-chirpy (~> 5.5, >= 5.5.2)
+      tzinfo (>= 1, < 3)
+      tzinfo-data
+      wdm (~> 0.1.1)
+  
+    BUNDLED WITH
+       2.4.7
+    ```
+  
+    --- TEMPLATE END ----------------------------------------------------------------
+  
+    Unfortunately, an unexpected error occurred, and Bundler cannot continue.
+  
+    First, try this link to see if there are any existing issue reports for this error:
+    https://github.com/rubygems/rubygems/search?q=You+don%27t+have+write+permissions+for+the+%2Fvar%2Flib%2Fgems%2F3.0.0+directory.&type=Issues
+  
+    If there aren't any reports for this error yet, please fill in the new issue form located at https://github.com/rubygems/rubygems/issues/new?labels=Bundler&template=bundler-related-issue.md, and copy and paste the report template above in there.
+  stderr_lines: <omitted>
+  stdout: |-
+    Fetching gem metadata from https://rubygems.org/.........
+    Using rake 13.0.6
+    Using bundler 2.4.7
+    Installing colorator 1.1.0
+    Installing public_suffix 5.0.1
+    Installing concurrent-ruby 1.2.2
+    Installing eventmachine 1.2.7 with native extensions
+    Installing http_parser.rb 0.8.0 with native extensions
+    Installing forwardable-extended 2.6.0
+    Fetching google-protobuf 3.22.0 (x86_64-linux)
+    Installing ffi 1.15.5 with native extensions
+    Installing mercenary 0.4.0
+    Fetching racc 1.6.2
+  
+  
+  
+  
+    Fetching parallel 1.22.1
+  
+  
+  
+  
+  
+    Fetching rainbow 3.1.1
+  
+  
+  
+  
+    Fetching yell 2.2.2
+  
+  
+  
+  
+  
+    Installing rb-fsevent 0.11.2
+    Using rexml 3.2.5
+    Installing liquid 4.0.4
+  
+    Installing rouge 4.1.0
+    Installing safe_yaml 1.0.5
+    Installing unicode-display_width 2.4.2
+    Fetching webrick 1.8.1
+  
+  
+  
+  
+    Fetching jekyll-paginate 1.1.0
+  stdout_lines: <omitted>
+2023-03-09 20:08:03,985 p=21499 u=dan n=ansible | PLAY RECAP ************************************************************************************************************************************
+2023-03-09 20:08:03,985 p=21499 u=dan n=ansible | dans-jekyll.lan            : ok=4    changed=0    unreachable=0    failed=1    skipped=0    rescued=0    ignored=0   
+2023-03-09 20:08:42,779 p=21654 u=dan n=ansible | PLAY [all] ************************************************************************************************************************************
+2023-03-09 20:08:42,785 p=21654 u=dan n=ansible | TASK [Gathering Facts ] ***********************************************************************************************************************
+2023-03-09 20:08:43,935 p=21654 u=dan n=ansible | ok: [dans-jekyll.lan]
+2023-03-09 20:08:43,954 p=21654 u=dan n=ansible | TASK [Install tools name=['git', 'docker', 'docker-compose', 'ruby-full', 'build-essential', 'zlib1g-dev']] ***********************************
+2023-03-09 20:08:45,045 p=21654 u=dan n=ansible | ok: [dans-jekyll.lan]
+2023-03-09 20:08:45,051 p=21654 u=dan n=ansible | TASK [Install jekyll name=jekyll, state=latest] ***********************************************************************************************
+2023-03-09 20:08:46,607 p=21654 u=dan n=ansible | ok: [dans-jekyll.lan]
+2023-03-09 20:08:46,612 p=21654 u=dan n=ansible | TASK [Install bundler name=bundler, state=latest] *********************************************************************************************
+2023-03-09 20:08:48,033 p=21654 u=dan n=ansible | ok: [dans-jekyll.lan]
+2023-03-09 20:08:48,038 p=21654 u=dan n=ansible | TASK [Setup bundle chdir=/home/dan/dans-homepage, executable=/bin/bash, _raw_params=/home/dan/gems/bin/bundle] ********************************
+2023-03-09 20:08:51,401 p=21654 u=dan n=ansible | fatal: [dans-jekyll.lan]: FAILED! => changed=true 
+  cmd: /home/dan/gems/bin/bundle
+  delta: '0:00:03.051194'
+  end: '2023-03-09 20:08:51.383379'
+  msg: non-zero return code
+  rc: 1
+  start: '2023-03-09 20:08:48.332185'
+  stderr: |-
+    Retrying download gem from https://rubygems.org/ due to error (2/4): Bundler::PermissionError There was an error while trying to write to `/var/lib/gems/3.0.0/cache/racc-1.6.2.gem`. It is likely that you need to grant write permissions for that path.
+    Retrying download gem from https://rubygems.org/ due to error (3/4): Bundler::PermissionError There was an error while trying to write to `/var/lib/gems/3.0.0/cache/racc-1.6.2.gem`. It is likely that you need to grant write permissions for that path.
+    Retrying download gem from https://rubygems.org/ due to error (4/4): Bundler::PermissionError There was an error while trying to write to `/var/lib/gems/3.0.0/cache/racc-1.6.2.gem`. It is likely that you need to grant write permissions for that path.
+    Retrying download gem from https://rubygems.org/ due to error (2/4): Bundler::PermissionError There was an error while trying to write to `/var/lib/gems/3.0.0/cache/parallel-1.22.1.gem`. It is likely that you need to grant write permissions for that path.
+    Retrying download gem from https://rubygems.org/ due to error (3/4): Bundler::PermissionError There was an error while trying to write to `/var/lib/gems/3.0.0/cache/parallel-1.22.1.gem`. It is likely that you need to grant write permissions for that path.
+    Retrying download gem from https://rubygems.org/ due to error (4/4): Bundler::PermissionError There was an error while trying to write to `/var/lib/gems/3.0.0/cache/parallel-1.22.1.gem`. It is likely that you need to grant write permissions for that path.
+    Retrying download gem from https://rubygems.org/ due to error (2/4): Bundler::PermissionError There was an error while trying to write to `/var/lib/gems/3.0.0/cache/google-protobuf-3.22.0-x86_64-linux.gem`. It is likely that you need to grant write permissions for that path.
+    Retrying download gem from https://rubygems.org/ due to error (2/4): Bundler::PermissionError There was an error while trying to write to `/var/lib/gems/3.0.0/cache/rainbow-3.1.1.gem`. It is likely that you need to grant write permissions for that path.
+    Retrying download gem from https://rubygems.org/ due to error (3/4): Bundler::PermissionError There was an error while trying to write to `/var/lib/gems/3.0.0/cache/rainbow-3.1.1.gem`. It is likely that you need to grant write permissions for that path.
+    Retrying download gem from https://rubygems.org/ due to error (4/4): Bundler::PermissionError There was an error while trying to write to `/var/lib/gems/3.0.0/cache/rainbow-3.1.1.gem`. It is likely that you need to grant write permissions for that path.
+    Retrying download gem from https://rubygems.org/ due to error (3/4): Bundler::PermissionError There was an error while trying to write to `/var/lib/gems/3.0.0/cache/google-protobuf-3.22.0-x86_64-linux.gem`. It is likely that you need to grant write permissions for that path.
+    Retrying download gem from https://rubygems.org/ due to error (2/4): Bundler::PermissionError There was an error while trying to write to `/var/lib/gems/3.0.0/cache/yell-2.2.2.gem`. It is likely that you need to grant write permissions for that path.
+    Retrying download gem from https://rubygems.org/ due to error (3/4): Bundler::PermissionError There was an error while trying to write to `/var/lib/gems/3.0.0/cache/yell-2.2.2.gem`. It is likely that you need to grant write permissions for that path.
+    Retrying download gem from https://rubygems.org/ due to error (4/4): Bundler::PermissionError There was an error while trying to write to `/var/lib/gems/3.0.0/cache/yell-2.2.2.gem`. It is likely that you need to grant write permissions for that path.
+    Retrying download gem from https://rubygems.org/ due to error (4/4): Bundler::PermissionError There was an error while trying to write to `/var/lib/gems/3.0.0/cache/google-protobuf-3.22.0-x86_64-linux.gem`. It is likely that you need to grant write permissions for that path.
+    Retrying download gem from https://rubygems.org/ due to error (2/4): Bundler::PermissionError There was an error while trying to write to `/var/lib/gems/3.0.0/cache/webrick-1.8.1.gem`. It is likely that you need to grant write permissions for that path.
+    Retrying download gem from https://rubygems.org/ due to error (3/4): Bundler::PermissionError There was an error while trying to write to `/var/lib/gems/3.0.0/cache/webrick-1.8.1.gem`. It is likely that you need to grant write permissions for that path.
+    Retrying download gem from https://rubygems.org/ due to error (4/4): Bundler::PermissionError There was an error while trying to write to `/var/lib/gems/3.0.0/cache/webrick-1.8.1.gem`. It is likely that you need to grant write permissions for that path.
+    Retrying download gem from https://rubygems.org/ due to error (2/4): Bundler::PermissionError There was an error while trying to write to `/var/lib/gems/3.0.0/cache/jekyll-paginate-1.1.0.gem`. It is likely that you need to grant write permissions for that path.
+    Retrying download gem from https://rubygems.org/ due to error (3/4): Bundler::PermissionError There was an error while trying to write to `/var/lib/gems/3.0.0/cache/jekyll-paginate-1.1.0.gem`. It is likely that you need to grant write permissions for that path.
+    Retrying download gem from https://rubygems.org/ due to error (4/4): Bundler::PermissionError There was an error while trying to write to `/var/lib/gems/3.0.0/cache/jekyll-paginate-1.1.0.gem`. It is likely that you need to grant write permissions for that path.
+    --- ERROR REPORT TEMPLATE -------------------------------------------------------
+  
+    ```
+    Gem::FilePermissionError: You don't have write permissions for the /var/lib/gems/3.0.0 directory.
+      /usr/lib/ruby/vendor_ruby/rubygems/installer.rb:715:in `verify_gem_home'
+      /usr/lib/ruby/vendor_ruby/rubygems/installer.rb:906:in `pre_install_checks'
+      /var/lib/gems/3.0.0/gems/bundler-2.4.7/lib/bundler/rubygems_gem_installer.rb:64:in `pre_install_checks'
+      /var/lib/gems/3.0.0/gems/bundler-2.4.7/lib/bundler/rubygems_gem_installer.rb:12:in `install'
+      /var/lib/gems/3.0.0/gems/bundler-2.4.7/lib/bundler/source/rubygems.rb:200:in `install'
+      /var/lib/gems/3.0.0/gems/bundler-2.4.7/lib/bundler/installer/gem_installer.rb:54:in `install'
+      /var/lib/gems/3.0.0/gems/bundler-2.4.7/lib/bundler/installer/gem_installer.rb:16:in `install_from_spec'
+      /var/lib/gems/3.0.0/gems/bundler-2.4.7/lib/bundler/installer/parallel_installer.rb:167:in `do_install'
+      /var/lib/gems/3.0.0/gems/bundler-2.4.7/lib/bundler/installer/parallel_installer.rb:158:in `block in worker_pool'
+      /var/lib/gems/3.0.0/gems/bundler-2.4.7/lib/bundler/worker.rb:62:in `apply_func'
+      /var/lib/gems/3.0.0/gems/bundler-2.4.7/lib/bundler/worker.rb:57:in `block in process_queue'
+      /var/lib/gems/3.0.0/gems/bundler-2.4.7/lib/bundler/worker.rb:54:in `loop'
+      /var/lib/gems/3.0.0/gems/bundler-2.4.7/lib/bundler/worker.rb:54:in `process_queue'
+      /var/lib/gems/3.0.0/gems/bundler-2.4.7/lib/bundler/worker.rb:90:in `block (2 levels) in create_threads'
+    Errno::EACCES: Permission denied @ rb_sysopen - /var/lib/gems/3.0.0/bundler.lock
+      /var/lib/gems/3.0.0/gems/bundler-2.4.7/lib/bundler/process_lock.rb:9:in `initialize'
+      /var/lib/gems/3.0.0/gems/bundler-2.4.7/lib/bundler/process_lock.rb:9:in `open'
+      /var/lib/gems/3.0.0/gems/bundler-2.4.7/lib/bundler/process_lock.rb:9:in `lock'
+      /var/lib/gems/3.0.0/gems/bundler-2.4.7/lib/bundler/installer.rb:71:in `run'
+      /var/lib/gems/3.0.0/gems/bundler-2.4.7/lib/bundler/installer.rb:23:in `install'
+      /var/lib/gems/3.0.0/gems/bundler-2.4.7/lib/bundler/cli/install.rb:62:in `run'
+      /var/lib/gems/3.0.0/gems/bundler-2.4.7/lib/bundler/cli.rb:261:in `block in install'
+      /var/lib/gems/3.0.0/gems/bundler-2.4.7/lib/bundler/settings.rb:131:in `temporary'
+      /var/lib/gems/3.0.0/gems/bundler-2.4.7/lib/bundler/cli.rb:260:in `install'
+      /var/lib/gems/3.0.0/gems/bundler-2.4.7/lib/bundler/vendor/thor/lib/thor/command.rb:27:in `run'
+      /var/lib/gems/3.0.0/gems/bundler-2.4.7/lib/bundler/vendor/thor/lib/thor/invocation.rb:127:in `invoke_command'
+      /var/lib/gems/3.0.0/gems/bundler-2.4.7/lib/bundler/vendor/thor/lib/thor.rb:392:in `dispatch'
+      /var/lib/gems/3.0.0/gems/bundler-2.4.7/lib/bundler/cli.rb:34:in `dispatch'
+      /var/lib/gems/3.0.0/gems/bundler-2.4.7/lib/bundler/vendor/thor/lib/thor/base.rb:485:in `start'
+      /var/lib/gems/3.0.0/gems/bundler-2.4.7/lib/bundler/cli.rb:28:in `start'
+      /var/lib/gems/3.0.0/gems/bundler-2.4.7/exe/bundle:45:in `block in <top (required)>'
+      /var/lib/gems/3.0.0/gems/bundler-2.4.7/lib/bundler/friendly_errors.rb:117:in `with_friendly_errors'
+      /var/lib/gems/3.0.0/gems/bundler-2.4.7/exe/bundle:33:in `<top (required)>'
+      /home/dan/gems/bin/bundle:25:in `load'
+      /home/dan/gems/bin/bundle:25:in `<main>'
+  
+    ```
+  
+    ## Environment
+  
+    ```
+    Bundler       2.4.7
+      Platforms   ruby, x86_64-linux
+    Ruby          3.0.2p107 (2021-07-07 revision 0db68f023372b634603c74fca94588b457be084c) [x86_64-linux]
+      Full Path   /usr/bin/ruby3.0
+      Config Dir  /etc
+    RubyGems      3.3.5
+      Gem Home    /var/lib/gems/3.0.0
+      Gem Path    /home/dan/.local/share/gem/ruby/3.0.0:/var/lib/gems/3.0.0:/usr/local/lib/ruby/gems/3.0.0:/usr/lib/ruby/gems/3.0.0:/usr/lib/x86_64-linux-gnu/ruby/gems/3.0.0:/usr/share/rubygems-integration/3.0.0:/usr/share/rubygems-integration/all:/usr/lib/x86_64-linux-gnu/rubygems-integration/3.0.0
+      User Home   /home/dan
+      User Path   /home/dan/.local/share/gem/ruby/3.0.0
+      Bin Dir     /usr/local/bin
+    OpenSSL
+      Compiled    OpenSSL 3.0.2 15 Mar 2022
+      Loaded      OpenSSL 3.0.2 15 Mar 2022
+      Cert File   /usr/lib/ssl/cert.pem
+      Cert Dir    /usr/lib/ssl/certs
+    Tools
+      Git         2.34.1
+      RVM         not installed
+      rbenv       not installed
+      chruby      not installed
+    ```
+  
+    ## Bundler Build Metadata
+  
+    ```
+    Built At          2023-02-15
+    Git SHA           5d717a27e0
+    Released Version  true
+    ```
+  
+    ## Gemfile
+  
+    ### Gemfile
+  
+    ```ruby
+    # frozen_string_literal: true
+  
+    source "https://rubygems.org"
+  
+    gem "jekyll-theme-chirpy", "~> 5.5", ">= 5.5.2"
+  
+    group :test do
+      gem "html-proofer", "~> 3.18"
+    end
+  
+    # Windows and JRuby does not include zoneinfo files, so bundle the tzinfo-data gem
+    # and associated library.
+    platforms :mingw, :x64_mingw, :mswin, :jruby do
+      gem "tzinfo", ">= 1", "< 3"
+      gem "tzinfo-data"
+    end
+  
+    # Performance-booster for watching directories on Windows
+    gem "wdm", "~> 0.1.1", :platforms => [:mingw, :x64_mingw, :mswin]
+  
+    # Lock `http_parser.rb` gem to `v0.6.x` on JRuby builds since newer versions of the gem
+    # do not have a Java counterpart.
+    gem "http_parser.rb", "~> 0.6.0", :platforms => [:jruby]
+  
+    # Lock jekyll-sass-converter to 2.x on Linux-musl
+    if RUBY_PLATFORM =~ /linux-musl/
+      gem "jekyll-sass-converter", "~> 2.0"
+    end
+    ```
+  
+    ### Gemfile.lock
+  
+    ```
+    GEM
+      remote: https://rubygems.org/
+      specs:
+        addressable (2.8.1)
+          public_suffix (>= 2.0.2, < 6.0)
+        colorator (1.1.0)
+        concurrent-ruby (1.2.2)
+        em-websocket (0.5.3)
+          eventmachine (>= 0.12.9)
+          http_parser.rb (~> 0)
+        ethon (0.16.0)
+          ffi (>= 1.15.0)
+        eventmachine (1.2.7)
+        ffi (1.15.5)
+        forwardable-extended (2.6.0)
+        google-protobuf (3.22.0-x86_64-linux)
+        html-proofer (3.19.4)
+          addressable (~> 2.3)
+          mercenary (~> 0.3)
+          nokogiri (~> 1.13)
+          parallel (~> 1.10)
+          rainbow (~> 3.0)
+          typhoeus (~> 1.3)
+          yell (~> 2.0)
+        http_parser.rb (0.8.0)
+        i18n (1.12.0)
+          concurrent-ruby (~> 1.0)
+        jekyll (4.3.2)
+          addressable (~> 2.4)
+          colorator (~> 1.0)
+          em-websocket (~> 0.5)
+          i18n (~> 1.0)
+          jekyll-sass-converter (>= 2.0, < 4.0)
+          jekyll-watch (~> 2.0)
+          kramdown (~> 2.3, >= 2.3.1)
+          kramdown-parser-gfm (~> 1.0)
+          liquid (~> 4.0)
+          mercenary (>= 0.3.6, < 0.5)
+          pathutil (~> 0.9)
+          rouge (>= 3.0, < 5.0)
+          safe_yaml (~> 1.0)
+          terminal-table (>= 1.8, < 4.0)
+          webrick (~> 1.7)
+        jekyll-archives (2.2.1)
+          jekyll (>= 3.6, < 5.0)
+        jekyll-paginate (1.1.0)
+        jekyll-redirect-from (0.16.0)
+          jekyll (>= 3.3, < 5.0)
+        jekyll-sass-converter (3.0.0)
+          sass-embedded (~> 1.54)
+        jekyll-seo-tag (2.8.0)
+          jekyll (>= 3.8, < 5.0)
+        jekyll-sitemap (1.4.0)
+          jekyll (>= 3.7, < 5.0)
+        jekyll-theme-chirpy (5.5.2)
+          jekyll (~> 4.3)
+          jekyll-archives (~> 2.2)
+          jekyll-paginate (~> 1.1)
+          jekyll-redirect-from (~> 0.16)
+          jekyll-seo-tag (~> 2.7)
+          jekyll-sitemap (~> 1.4)
+        jekyll-watch (2.2.1)
+          listen (~> 3.0)
+        kramdown (2.4.0)
+          rexml
+        kramdown-parser-gfm (1.1.0)
+          kramdown (~> 2.0)
+        liquid (4.0.4)
+        listen (3.8.0)
+          rb-fsevent (~> 0.10, >= 0.10.3)
+          rb-inotify (~> 0.9, >= 0.9.10)
+        mercenary (0.4.0)
+        nokogiri (1.14.2-x86_64-linux)
+          racc (~> 1.4)
+        parallel (1.22.1)
+        pathutil (0.16.2)
+          forwardable-extended (~> 2.6)
+        public_suffix (5.0.1)
+        racc (1.6.2)
+        rainbow (3.1.1)
+        rake (13.0.6)
+        rb-fsevent (0.11.2)
+        rb-inotify (0.10.1)
+          ffi (~> 1.0)
+        rexml (3.2.5)
+        rouge (4.1.0)
+        safe_yaml (1.0.5)
+        sass-embedded (1.58.3)
+          google-protobuf (~> 3.21)
+          rake (>= 10.0.0)
+        terminal-table (3.0.2)
+          unicode-display_width (>= 1.1.1, < 3)
+        typhoeus (1.4.0)
+          ethon (>= 0.9.0)
+        unicode-display_width (2.4.2)
+        webrick (1.8.1)
+        yell (2.2.2)
+  
+    PLATFORMS
+      x86_64-linux
+  
+    DEPENDENCIES
+      html-proofer (~> 3.18)
+      http_parser.rb (~> 0.6.0)
+      jekyll-theme-chirpy (~> 5.5, >= 5.5.2)
+      tzinfo (>= 1, < 3)
+      tzinfo-data
+      wdm (~> 0.1.1)
+  
+    BUNDLED WITH
+       2.4.7
+    ```
+  
+    --- TEMPLATE END ----------------------------------------------------------------
+  
+    Unfortunately, an unexpected error occurred, and Bundler cannot continue.
+  
+    First, try this link to see if there are any existing issue reports for this error:
+    https://github.com/rubygems/rubygems/search?q=You+don%27t+have+write+permissions+for+the+%2Fvar%2Flib%2Fgems%2F3.0.0+directory.&type=Issues
+  
+    If there aren't any reports for this error yet, please fill in the new issue form located at https://github.com/rubygems/rubygems/issues/new?labels=Bundler&template=bundler-related-issue.md, and copy and paste the report template above in there.
+  stderr_lines: <omitted>
+  stdout: |-
+    Fetching gem metadata from https://rubygems.org/.........
+    Using rake 13.0.6
+    Using bundler 2.4.7
+    Installing colorator 1.1.0
+    Installing public_suffix 5.0.1
+    Installing concurrent-ruby 1.2.2
+    Installing eventmachine 1.2.7 with native extensions
+    Installing http_parser.rb 0.8.0 with native extensions
+    Installing forwardable-extended 2.6.0
+    Fetching google-protobuf 3.22.0 (x86_64-linux)
+    Installing ffi 1.15.5 with native extensions
+    Installing mercenary 0.4.0
+    Fetching racc 1.6.2
+  
+  
+  
+  
+    Fetching parallel 1.22.1
+  
+  
+  
+  
+    Fetching rainbow 3.1.1
+  
+  
+  
+  
+  
+    Fetching yell 2.2.2
+  
+  
+  
+  
+  
+    Installing rb-fsevent 0.11.2
+    Using rexml 3.2.5
+    Installing liquid 4.0.4
+    Installing rouge 4.1.0
+    Installing safe_yaml 1.0.5
+    Installing unicode-display_width 2.4.2
+    Fetching webrick 1.8.1
+  
+  
+  
+  
+  
+    Fetching jekyll-paginate 1.1.0
+  stdout_lines: <omitted>
+2023-03-09 20:08:51,402 p=21654 u=dan n=ansible | PLAY RECAP ************************************************************************************************************************************
+2023-03-09 20:08:51,402 p=21654 u=dan n=ansible | dans-jekyll.lan            : ok=4    changed=0    unreachable=0    failed=1    skipped=0    rescued=0    ignored=0   
+2023-03-09 20:11:03,290 p=22111 u=dan n=ansible | PLAY [all] ************************************************************************************************************************************
+2023-03-09 20:11:03,296 p=22111 u=dan n=ansible | TASK [Gathering Facts ] ***********************************************************************************************************************
+2023-03-09 20:11:04,783 p=22111 u=dan n=ansible | ok: [dans-jekyll.lan]
+2023-03-09 20:11:04,794 p=22111 u=dan n=ansible | TASK [Install tools name=['git', 'docker', 'docker-compose', 'ruby-full', 'build-essential', 'zlib1g-dev']] ***********************************
+2023-03-09 20:11:05,967 p=22111 u=dan n=ansible | ok: [dans-jekyll.lan]
+2023-03-09 20:11:05,973 p=22111 u=dan n=ansible | TASK [Install jekyll name=jekyll, state=latest] ***********************************************************************************************
+2023-03-09 20:11:07,593 p=22111 u=dan n=ansible | ok: [dans-jekyll.lan]
+2023-03-09 20:11:07,601 p=22111 u=dan n=ansible | TASK [Install bundler name=bundler, state=latest] *********************************************************************************************
+2023-03-09 20:11:09,009 p=22111 u=dan n=ansible | ok: [dans-jekyll.lan]
+2023-03-09 20:11:09,018 p=22111 u=dan n=ansible | TASK [Setup bundle chdir=/home/dan/dans-homepage, executable=/bin/bash, _raw_params=/home/dan/gems/bin/bundle] ********************************
+2023-03-09 20:11:12,182 p=22111 u=dan n=ansible | fatal: [dans-jekyll.lan]: FAILED! => changed=true 
+  cmd: /home/dan/gems/bin/bundle
+  delta: '0:00:02.870483'
+  end: '2023-03-09 20:11:12.027360'
+  msg: non-zero return code
+  rc: 1
+  start: '2023-03-09 20:11:09.156877'
+  stderr: |-
+    Retrying download gem from https://rubygems.org/ due to error (2/4): Bundler::PermissionError There was an error while trying to write to `/var/lib/gems/3.0.0/cache/racc-1.6.2.gem`. It is likely that you need to grant write permissions for that path.
+    Retrying download gem from https://rubygems.org/ due to error (2/4): Bundler::PermissionError There was an error while trying to write to `/var/lib/gems/3.0.0/cache/google-protobuf-3.22.0-x86_64-linux.gem`. It is likely that you need to grant write permissions for that path.
+    Retrying download gem from https://rubygems.org/ due to error (3/4): Bundler::PermissionError There was an error while trying to write to `/var/lib/gems/3.0.0/cache/racc-1.6.2.gem`. It is likely that you need to grant write permissions for that path.
+    Retrying download gem from https://rubygems.org/ due to error (3/4): Bundler::PermissionError There was an error while trying to write to `/var/lib/gems/3.0.0/cache/google-protobuf-3.22.0-x86_64-linux.gem`. It is likely that you need to grant write permissions for that path.
+    Retrying download gem from https://rubygems.org/ due to error (4/4): Bundler::PermissionError There was an error while trying to write to `/var/lib/gems/3.0.0/cache/racc-1.6.2.gem`. It is likely that you need to grant write permissions for that path.
+    Retrying download gem from https://rubygems.org/ due to error (4/4): Bundler::PermissionError There was an error while trying to write to `/var/lib/gems/3.0.0/cache/google-protobuf-3.22.0-x86_64-linux.gem`. It is likely that you need to grant write permissions for that path.
+    Retrying download gem from https://rubygems.org/ due to error (2/4): Bundler::PermissionError There was an error while trying to write to `/var/lib/gems/3.0.0/cache/parallel-1.22.1.gem`. It is likely that you need to grant write permissions for that path.
+    Retrying download gem from https://rubygems.org/ due to error (3/4): Bundler::PermissionError There was an error while trying to write to `/var/lib/gems/3.0.0/cache/parallel-1.22.1.gem`. It is likely that you need to grant write permissions for that path.
+    Retrying download gem from https://rubygems.org/ due to error (4/4): Bundler::PermissionError There was an error while trying to write to `/var/lib/gems/3.0.0/cache/parallel-1.22.1.gem`. It is likely that you need to grant write permissions for that path.
+    Retrying download gem from https://rubygems.org/ due to error (2/4): Bundler::PermissionError There was an error while trying to write to `/var/lib/gems/3.0.0/cache/rainbow-3.1.1.gem`. It is likely that you need to grant write permissions for that path.
+    Retrying download gem from https://rubygems.org/ due to error (3/4): Bundler::PermissionError There was an error while trying to write to `/var/lib/gems/3.0.0/cache/rainbow-3.1.1.gem`. It is likely that you need to grant write permissions for that path.
+    Retrying download gem from https://rubygems.org/ due to error (4/4): Bundler::PermissionError There was an error while trying to write to `/var/lib/gems/3.0.0/cache/rainbow-3.1.1.gem`. It is likely that you need to grant write permissions for that path.
+    Retrying download gem from https://rubygems.org/ due to error (2/4): Bundler::PermissionError There was an error while trying to write to `/var/lib/gems/3.0.0/cache/yell-2.2.2.gem`. It is likely that you need to grant write permissions for that path.
+    Retrying download gem from https://rubygems.org/ due to error (3/4): Bundler::PermissionError There was an error while trying to write to `/var/lib/gems/3.0.0/cache/yell-2.2.2.gem`. It is likely that you need to grant write permissions for that path.
+    Retrying download gem from https://rubygems.org/ due to error (4/4): Bundler::PermissionError There was an error while trying to write to `/var/lib/gems/3.0.0/cache/yell-2.2.2.gem`. It is likely that you need to grant write permissions for that path.
+    Retrying download gem from https://rubygems.org/ due to error (2/4): Bundler::PermissionError There was an error while trying to write to `/var/lib/gems/3.0.0/cache/webrick-1.8.1.gem`. It is likely that you need to grant write permissions for that path.
+    Retrying download gem from https://rubygems.org/ due to error (2/4): Bundler::PermissionError There was an error while trying to write to `/var/lib/gems/3.0.0/cache/jekyll-paginate-1.1.0.gem`. It is likely that you need to grant write permissions for that path.
+    Retrying download gem from https://rubygems.org/ due to error (3/4): Bundler::PermissionError There was an error while trying to write to `/var/lib/gems/3.0.0/cache/webrick-1.8.1.gem`. It is likely that you need to grant write permissions for that path.
+    Retrying download gem from https://rubygems.org/ due to error (3/4): Bundler::PermissionError There was an error while trying to write to `/var/lib/gems/3.0.0/cache/jekyll-paginate-1.1.0.gem`. It is likely that you need to grant write permissions for that path.
+    Retrying download gem from https://rubygems.org/ due to error (4/4): Bundler::PermissionError There was an error while trying to write to `/var/lib/gems/3.0.0/cache/webrick-1.8.1.gem`. It is likely that you need to grant write permissions for that path.
+    Retrying download gem from https://rubygems.org/ due to error (4/4): Bundler::PermissionError There was an error while trying to write to `/var/lib/gems/3.0.0/cache/jekyll-paginate-1.1.0.gem`. It is likely that you need to grant write permissions for that path.
+    --- ERROR REPORT TEMPLATE -------------------------------------------------------
+  
+    ```
+    Gem::FilePermissionError: You don't have write permissions for the /var/lib/gems/3.0.0 directory.
+      /usr/lib/ruby/vendor_ruby/rubygems/installer.rb:715:in `verify_gem_home'
+      /usr/lib/ruby/vendor_ruby/rubygems/installer.rb:906:in `pre_install_checks'
+      /var/lib/gems/3.0.0/gems/bundler-2.4.7/lib/bundler/rubygems_gem_installer.rb:64:in `pre_install_checks'
+      /var/lib/gems/3.0.0/gems/bundler-2.4.7/lib/bundler/rubygems_gem_installer.rb:12:in `install'
+      /var/lib/gems/3.0.0/gems/bundler-2.4.7/lib/bundler/source/rubygems.rb:200:in `install'
+      /var/lib/gems/3.0.0/gems/bundler-2.4.7/lib/bundler/installer/gem_installer.rb:54:in `install'
+      /var/lib/gems/3.0.0/gems/bundler-2.4.7/lib/bundler/installer/gem_installer.rb:16:in `install_from_spec'
+      /var/lib/gems/3.0.0/gems/bundler-2.4.7/lib/bundler/installer/parallel_installer.rb:167:in `do_install'
+      /var/lib/gems/3.0.0/gems/bundler-2.4.7/lib/bundler/installer/parallel_installer.rb:158:in `block in worker_pool'
+      /var/lib/gems/3.0.0/gems/bundler-2.4.7/lib/bundler/worker.rb:62:in `apply_func'
+      /var/lib/gems/3.0.0/gems/bundler-2.4.7/lib/bundler/worker.rb:57:in `block in process_queue'
+      /var/lib/gems/3.0.0/gems/bundler-2.4.7/lib/bundler/worker.rb:54:in `loop'
+      /var/lib/gems/3.0.0/gems/bundler-2.4.7/lib/bundler/worker.rb:54:in `process_queue'
+      /var/lib/gems/3.0.0/gems/bundler-2.4.7/lib/bundler/worker.rb:90:in `block (2 levels) in create_threads'
+    Errno::EACCES: Permission denied @ rb_sysopen - /var/lib/gems/3.0.0/bundler.lock
+      /var/lib/gems/3.0.0/gems/bundler-2.4.7/lib/bundler/process_lock.rb:9:in `initialize'
+      /var/lib/gems/3.0.0/gems/bundler-2.4.7/lib/bundler/process_lock.rb:9:in `open'
+      /var/lib/gems/3.0.0/gems/bundler-2.4.7/lib/bundler/process_lock.rb:9:in `lock'
+      /var/lib/gems/3.0.0/gems/bundler-2.4.7/lib/bundler/installer.rb:71:in `run'
+      /var/lib/gems/3.0.0/gems/bundler-2.4.7/lib/bundler/installer.rb:23:in `install'
+      /var/lib/gems/3.0.0/gems/bundler-2.4.7/lib/bundler/cli/install.rb:62:in `run'
+      /var/lib/gems/3.0.0/gems/bundler-2.4.7/lib/bundler/cli.rb:261:in `block in install'
+      /var/lib/gems/3.0.0/gems/bundler-2.4.7/lib/bundler/settings.rb:131:in `temporary'
+      /var/lib/gems/3.0.0/gems/bundler-2.4.7/lib/bundler/cli.rb:260:in `install'
+      /var/lib/gems/3.0.0/gems/bundler-2.4.7/lib/bundler/vendor/thor/lib/thor/command.rb:27:in `run'
+      /var/lib/gems/3.0.0/gems/bundler-2.4.7/lib/bundler/vendor/thor/lib/thor/invocation.rb:127:in `invoke_command'
+      /var/lib/gems/3.0.0/gems/bundler-2.4.7/lib/bundler/vendor/thor/lib/thor.rb:392:in `dispatch'
+      /var/lib/gems/3.0.0/gems/bundler-2.4.7/lib/bundler/cli.rb:34:in `dispatch'
+      /var/lib/gems/3.0.0/gems/bundler-2.4.7/lib/bundler/vendor/thor/lib/thor/base.rb:485:in `start'
+      /var/lib/gems/3.0.0/gems/bundler-2.4.7/lib/bundler/cli.rb:28:in `start'
+      /var/lib/gems/3.0.0/gems/bundler-2.4.7/exe/bundle:45:in `block in <top (required)>'
+      /var/lib/gems/3.0.0/gems/bundler-2.4.7/lib/bundler/friendly_errors.rb:117:in `with_friendly_errors'
+      /var/lib/gems/3.0.0/gems/bundler-2.4.7/exe/bundle:33:in `<top (required)>'
+      /home/dan/gems/bin/bundle:25:in `load'
+      /home/dan/gems/bin/bundle:25:in `<main>'
+  
+    ```
+  
+    ## Environment
+  
+    ```
+    Bundler       2.4.7
+      Platforms   ruby, x86_64-linux
+    Ruby          3.0.2p107 (2021-07-07 revision 0db68f023372b634603c74fca94588b457be084c) [x86_64-linux]
+      Full Path   /usr/bin/ruby3.0
+      Config Dir  /etc
+    RubyGems      3.3.5
+      Gem Home    /var/lib/gems/3.0.0
+      Gem Path    /home/dan/.local/share/gem/ruby/3.0.0:/var/lib/gems/3.0.0:/usr/local/lib/ruby/gems/3.0.0:/usr/lib/ruby/gems/3.0.0:/usr/lib/x86_64-linux-gnu/ruby/gems/3.0.0:/usr/share/rubygems-integration/3.0.0:/usr/share/rubygems-integration/all:/usr/lib/x86_64-linux-gnu/rubygems-integration/3.0.0
+      User Home   /home/dan
+      User Path   /home/dan/.local/share/gem/ruby/3.0.0
+      Bin Dir     /usr/local/bin
+    OpenSSL
+      Compiled    OpenSSL 3.0.2 15 Mar 2022
+      Loaded      OpenSSL 3.0.2 15 Mar 2022
+      Cert File   /usr/lib/ssl/cert.pem
+      Cert Dir    /usr/lib/ssl/certs
+    Tools
+      Git         2.34.1
+      RVM         not installed
+      rbenv       not installed
+      chruby      not installed
+    ```
+  
+    ## Bundler Build Metadata
+  
+    ```
+    Built At          2023-02-15
+    Git SHA           5d717a27e0
+    Released Version  true
+    ```
+  
+    ## Gemfile
+  
+    ### Gemfile
+  
+    ```ruby
+    # frozen_string_literal: true
+  
+    source "https://rubygems.org"
+  
+    gem "jekyll-theme-chirpy", "~> 5.5", ">= 5.5.2"
+  
+    group :test do
+      gem "html-proofer", "~> 3.18"
+    end
+  
+    # Windows and JRuby does not include zoneinfo files, so bundle the tzinfo-data gem
+    # and associated library.
+    platforms :mingw, :x64_mingw, :mswin, :jruby do
+      gem "tzinfo", ">= 1", "< 3"
+      gem "tzinfo-data"
+    end
+  
+    # Performance-booster for watching directories on Windows
+    gem "wdm", "~> 0.1.1", :platforms => [:mingw, :x64_mingw, :mswin]
+  
+    # Lock `http_parser.rb` gem to `v0.6.x` on JRuby builds since newer versions of the gem
+    # do not have a Java counterpart.
+    gem "http_parser.rb", "~> 0.6.0", :platforms => [:jruby]
+  
+    # Lock jekyll-sass-converter to 2.x on Linux-musl
+    if RUBY_PLATFORM =~ /linux-musl/
+      gem "jekyll-sass-converter", "~> 2.0"
+    end
+    ```
+  
+    ### Gemfile.lock
+  
+    ```
+    GEM
+      remote: https://rubygems.org/
+      specs:
+        addressable (2.8.1)
+          public_suffix (>= 2.0.2, < 6.0)
+        colorator (1.1.0)
+        concurrent-ruby (1.2.2)
+        em-websocket (0.5.3)
+          eventmachine (>= 0.12.9)
+          http_parser.rb (~> 0)
+        ethon (0.16.0)
+          ffi (>= 1.15.0)
+        eventmachine (1.2.7)
+        ffi (1.15.5)
+        forwardable-extended (2.6.0)
+        google-protobuf (3.22.0-x86_64-linux)
+        html-proofer (3.19.4)
+          addressable (~> 2.3)
+          mercenary (~> 0.3)
+          nokogiri (~> 1.13)
+          parallel (~> 1.10)
+          rainbow (~> 3.0)
+          typhoeus (~> 1.3)
+          yell (~> 2.0)
+        http_parser.rb (0.8.0)
+        i18n (1.12.0)
+          concurrent-ruby (~> 1.0)
+        jekyll (4.3.2)
+          addressable (~> 2.4)
+          colorator (~> 1.0)
+          em-websocket (~> 0.5)
+          i18n (~> 1.0)
+          jekyll-sass-converter (>= 2.0, < 4.0)
+          jekyll-watch (~> 2.0)
+          kramdown (~> 2.3, >= 2.3.1)
+          kramdown-parser-gfm (~> 1.0)
+          liquid (~> 4.0)
+          mercenary (>= 0.3.6, < 0.5)
+          pathutil (~> 0.9)
+          rouge (>= 3.0, < 5.0)
+          safe_yaml (~> 1.0)
+          terminal-table (>= 1.8, < 4.0)
+          webrick (~> 1.7)
+        jekyll-archives (2.2.1)
+          jekyll (>= 3.6, < 5.0)
+        jekyll-paginate (1.1.0)
+        jekyll-redirect-from (0.16.0)
+          jekyll (>= 3.3, < 5.0)
+        jekyll-sass-converter (3.0.0)
+          sass-embedded (~> 1.54)
+        jekyll-seo-tag (2.8.0)
+          jekyll (>= 3.8, < 5.0)
+        jekyll-sitemap (1.4.0)
+          jekyll (>= 3.7, < 5.0)
+        jekyll-theme-chirpy (5.5.2)
+          jekyll (~> 4.3)
+          jekyll-archives (~> 2.2)
+          jekyll-paginate (~> 1.1)
+          jekyll-redirect-from (~> 0.16)
+          jekyll-seo-tag (~> 2.7)
+          jekyll-sitemap (~> 1.4)
+        jekyll-watch (2.2.1)
+          listen (~> 3.0)
+        kramdown (2.4.0)
+          rexml
+        kramdown-parser-gfm (1.1.0)
+          kramdown (~> 2.0)
+        liquid (4.0.4)
+        listen (3.8.0)
+          rb-fsevent (~> 0.10, >= 0.10.3)
+          rb-inotify (~> 0.9, >= 0.9.10)
+        mercenary (0.4.0)
+        nokogiri (1.14.2-x86_64-linux)
+          racc (~> 1.4)
+        parallel (1.22.1)
+        pathutil (0.16.2)
+          forwardable-extended (~> 2.6)
+        public_suffix (5.0.1)
+        racc (1.6.2)
+        rainbow (3.1.1)
+        rake (13.0.6)
+        rb-fsevent (0.11.2)
+        rb-inotify (0.10.1)
+          ffi (~> 1.0)
+        rexml (3.2.5)
+        rouge (4.1.0)
+        safe_yaml (1.0.5)
+        sass-embedded (1.58.3)
+          google-protobuf (~> 3.21)
+          rake (>= 10.0.0)
+        terminal-table (3.0.2)
+          unicode-display_width (>= 1.1.1, < 3)
+        typhoeus (1.4.0)
+          ethon (>= 0.9.0)
+        unicode-display_width (2.4.2)
+        webrick (1.8.1)
+        yell (2.2.2)
+  
+    PLATFORMS
+      x86_64-linux
+  
+    DEPENDENCIES
+      html-proofer (~> 3.18)
+      http_parser.rb (~> 0.6.0)
+      jekyll-theme-chirpy (~> 5.5, >= 5.5.2)
+      tzinfo (>= 1, < 3)
+      tzinfo-data
+      wdm (~> 0.1.1)
+  
+    BUNDLED WITH
+       2.4.7
+    ```
+  
+    --- TEMPLATE END ----------------------------------------------------------------
+  
+    Unfortunately, an unexpected error occurred, and Bundler cannot continue.
+  
+    First, try this link to see if there are any existing issue reports for this error:
+    https://github.com/rubygems/rubygems/search?q=You+don%27t+have+write+permissions+for+the+%2Fvar%2Flib%2Fgems%2F3.0.0+directory.&type=Issues
+  
+    If there aren't any reports for this error yet, please fill in the new issue form located at https://github.com/rubygems/rubygems/issues/new?labels=Bundler&template=bundler-related-issue.md, and copy and paste the report template above in there.
+  stderr_lines: <omitted>
+  stdout: |-
+    Fetching gem metadata from https://rubygems.org/.........
+    Using rake 13.0.6
+    Using bundler 2.4.7
+    Installing colorator 1.1.0
+    Installing public_suffix 5.0.1
+    Installing concurrent-ruby 1.2.2
+    Installing eventmachine 1.2.7 with native extensions
+    Installing http_parser.rb 0.8.0 with native extensions
+    Installing forwardable-extended 2.6.0
+    Fetching google-protobuf 3.22.0 (x86_64-linux)
+    Installing ffi 1.15.5 with native extensions
+    Installing mercenary 0.4.0
+    Fetching racc 1.6.2
+  
+  
+  
+  
+  
+  
+  
+    Fetching parallel 1.22.1
+  
+  
+    Fetching rainbow 3.1.1
+  
+  
+  
+    Fetching yell 2.2.2
+  
+  
+  
+  
+    Installing rb-fsevent 0.11.2
+    Using rexml 3.2.5
+    Installing liquid 4.0.4
+  
+    Installing rouge 4.1.0
+  
+    Installing safe_yaml 1.0.5
+    Installing unicode-display_width 2.4.2
+    Fetching webrick 1.8.1
+  
+  
+    Fetching jekyll-paginate 1.1.0
+  stdout_lines: <omitted>
+2023-03-09 20:11:12,182 p=22111 u=dan n=ansible | PLAY RECAP ************************************************************************************************************************************
+2023-03-09 20:11:12,182 p=22111 u=dan n=ansible | dans-jekyll.lan            : ok=4    changed=0    unreachable=0    failed=1    skipped=0    rescued=0    ignored=0   
+2023-03-09 20:12:14,101 p=22334 u=dan n=ansible | PLAY [all] ************************************************************************************************************************************
+2023-03-09 20:12:14,107 p=22334 u=dan n=ansible | TASK [Gathering Facts ] ***********************************************************************************************************************
+2023-03-09 20:12:15,551 p=22334 u=dan n=ansible | ok: [dans-jekyll.lan]
+2023-03-09 20:12:15,573 p=22334 u=dan n=ansible | TASK [Install tools name=['git', 'docker', 'docker-compose', 'ruby-full', 'build-essential', 'zlib1g-dev']] ***********************************
+2023-03-09 20:12:16,663 p=22334 u=dan n=ansible | ok: [dans-jekyll.lan]
+2023-03-09 20:12:16,667 p=22334 u=dan n=ansible | TASK [Install jekyll name=jekyll, state=latest] ***********************************************************************************************
+2023-03-09 20:12:18,218 p=22334 u=dan n=ansible | ok: [dans-jekyll.lan]
+2023-03-09 20:12:18,226 p=22334 u=dan n=ansible | TASK [Install bundler name=bundler, state=latest] *********************************************************************************************
+2023-03-09 20:12:19,616 p=22334 u=dan n=ansible | ok: [dans-jekyll.lan]
+2023-03-09 20:12:19,622 p=22334 u=dan n=ansible | TASK [Setup bundle chdir=/home/dan/dans-homepage, executable=/bin/bash, _raw_params=/home/dan/gems/bin/bundle] ********************************
+2023-03-09 20:12:19,904 p=22334 u=dan n=ansible | fatal: [dans-jekyll.lan]: FAILED! => changed=false 
+  cmd: /home/dan/gems/bin/bundle
+  delta: null
+  end: null
+  msg: 'Unable to change directory before execution: [Errno 2] No such file or directory: b''/home/dan/dans-homepage'''
+  rc: null
+  start: null
+  stderr: ''
+  stderr_lines: <omitted>
+  stdout: ''
+  stdout_lines: <omitted>
+2023-03-09 20:12:19,905 p=22334 u=dan n=ansible | PLAY RECAP ************************************************************************************************************************************
+2023-03-09 20:12:19,905 p=22334 u=dan n=ansible | dans-jekyll.lan            : ok=4    changed=0    unreachable=0    failed=1    skipped=0    rescued=0    ignored=0   
+2023-03-09 20:12:58,269 p=22596 u=dan n=ansible | PLAY [all] ************************************************************************************************************************************
+2023-03-09 20:12:58,275 p=22596 u=dan n=ansible | TASK [Gathering Facts ] ***********************************************************************************************************************
+2023-03-09 20:12:59,409 p=22596 u=dan n=ansible | ok: [dans-jekyll.lan]
+2023-03-09 20:12:59,429 p=22596 u=dan n=ansible | TASK [Install tools name=['git', 'docker', 'docker-compose', 'ruby-full', 'build-essential', 'zlib1g-dev']] ***********************************
+2023-03-09 20:13:00,509 p=22596 u=dan n=ansible | ok: [dans-jekyll.lan]
+2023-03-09 20:13:00,517 p=22596 u=dan n=ansible | TASK [Install jekyll name=jekyll, state=latest] ***********************************************************************************************
+2023-03-09 20:13:02,004 p=22596 u=dan n=ansible | ok: [dans-jekyll.lan]
+2023-03-09 20:13:02,010 p=22596 u=dan n=ansible | TASK [Install bundler name=bundler, state=latest] *********************************************************************************************
+2023-03-09 20:13:03,385 p=22596 u=dan n=ansible | ok: [dans-jekyll.lan]
+2023-03-09 20:13:03,392 p=22596 u=dan n=ansible | TASK [Pull the latest main branch from github repo=https://github.com/oconnordaniel/dans-homepage.git, dest=/home/dan/dans-homepage] **********
+2023-03-09 20:13:08,225 p=22596 u=dan n=ansible | changed: [dans-jekyll.lan]
+2023-03-09 20:13:08,232 p=22596 u=dan n=ansible | TASK [Setup bundle chdir=/home/dan/dans-homepage, executable=/bin/bash, _raw_params=/home/dan/gems/bin/bundle] ********************************
+2023-03-09 20:13:08,525 p=22596 u=dan n=ansible | fatal: [dans-jekyll.lan]: FAILED! => changed=true 
+  cmd: /home/dan/gems/bin/bundle
+  delta: '0:00:00.004707'
+  end: '2023-03-09 20:13:08.505289'
+  msg: non-zero return code
+  rc: 127
+  start: '2023-03-09 20:13:08.500582'
+  stderr: '/bin/bash: line 1: /home/dan/gems/bin/bundle: No such file or directory'
+  stderr_lines: <omitted>
+  stdout: ''
+  stdout_lines: <omitted>
+2023-03-09 20:13:08,525 p=22596 u=dan n=ansible | PLAY RECAP ************************************************************************************************************************************
+2023-03-09 20:13:08,525 p=22596 u=dan n=ansible | dans-jekyll.lan            : ok=5    changed=1    unreachable=0    failed=1    skipped=0    rescued=0    ignored=0   
+2023-03-09 20:15:38,972 p=23127 u=dan n=ansible | ERROR! no module/action detected in task.
+
+The error appears to be in '/home/dan/Dev/dans-homepage/ansible-play/deploy.yml': line 17, column 7, but may
+be elsewhere in the file depending on the exact syntax problem.
+
+The offending line appears to be:
+
+
+    - name:
+      ^ here
+
+2023-03-09 20:15:51,175 p=23257 u=dan n=ansible | PLAY [all] ************************************************************************************************************************************
+2023-03-09 20:15:51,180 p=23257 u=dan n=ansible | TASK [Gathering Facts ] ***********************************************************************************************************************
+2023-03-09 20:15:52,628 p=23257 u=dan n=ansible | ok: [dans-jekyll.lan]
+2023-03-09 20:15:52,642 p=23257 u=dan n=ansible | TASK [Install tools name=['git', 'docker', 'docker-compose', 'ruby-full', 'build-essential', 'zlib1g-dev']] ***********************************
+2023-03-09 20:15:53,735 p=23257 u=dan n=ansible | ok: [dans-jekyll.lan]
+2023-03-09 20:15:53,740 p=23257 u=dan n=ansible | TASK [Install jekyll name=jekyll, state=latest] ***********************************************************************************************
+2023-03-09 20:15:55,474 p=23257 u=dan n=ansible | ok: [dans-jekyll.lan]
+2023-03-09 20:15:55,479 p=23257 u=dan n=ansible | TASK [Install bundler name=bundler, state=latest] *********************************************************************************************
+2023-03-09 20:15:56,862 p=23257 u=dan n=ansible | ok: [dans-jekyll.lan]
+2023-03-09 20:15:56,869 p=23257 u=dan n=ansible | TASK [Pull the latest main branch from github repo=https://github.com/oconnordaniel/dans-homepage.git, dest=/home/dan/dans-homepage] **********
+2023-03-09 20:15:58,282 p=23257 u=dan n=ansible | ok: [dans-jekyll.lan]
+2023-03-09 20:15:58,288 p=23257 u=dan n=ansible | TASK [Setup bundle chdir=/home/dan/dans-homepage, executable=/bin/bash, _raw_params=/home/dan/gems/bin/bundle] ********************************
+2023-03-09 20:15:58,577 p=23257 u=dan n=ansible | fatal: [dans-jekyll.lan]: FAILED! => changed=true 
+  cmd: /home/dan/gems/bin/bundle
+  delta: '0:00:00.004348'
+  end: '2023-03-09 20:15:58.560672'
+  msg: non-zero return code
+  rc: 127
+  start: '2023-03-09 20:15:58.556324'
+  stderr: '/bin/bash: line 1: /home/dan/gems/bin/bundle: No such file or directory'
+  stderr_lines: <omitted>
+  stdout: ''
+  stdout_lines: <omitted>
+2023-03-09 20:15:58,578 p=23257 u=dan n=ansible | PLAY RECAP ************************************************************************************************************************************
+2023-03-09 20:15:58,578 p=23257 u=dan n=ansible | dans-jekyll.lan            : ok=5    changed=0    unreachable=0    failed=1    skipped=0    rescued=0    ignored=0   
+2023-03-09 20:18:56,978 p=23705 u=dan n=ansible | PLAY [all] ************************************************************************************************************************************
+2023-03-09 20:18:56,984 p=23705 u=dan n=ansible | TASK [Gathering Facts ] ***********************************************************************************************************************
+2023-03-09 20:18:58,445 p=23705 u=dan n=ansible | ok: [dans-jekyll.lan]
+2023-03-09 20:18:58,468 p=23705 u=dan n=ansible | TASK [Install tools name=['git', 'docker', 'docker-compose', 'ruby-full', 'build-essential', 'zlib1g-dev']] ***********************************
+2023-03-09 20:18:59,578 p=23705 u=dan n=ansible | ok: [dans-jekyll.lan]
+2023-03-09 20:18:59,584 p=23705 u=dan n=ansible | TASK [Install jekyll name=jekyll, state=latest] ***********************************************************************************************
+2023-03-09 20:19:01,311 p=23705 u=dan n=ansible | ok: [dans-jekyll.lan]
+2023-03-09 20:19:01,315 p=23705 u=dan n=ansible | TASK [Install bundler name=bundler, state=latest] *********************************************************************************************
+2023-03-09 20:19:02,686 p=23705 u=dan n=ansible | ok: [dans-jekyll.lan]
+2023-03-09 20:19:02,690 p=23705 u=dan n=ansible | TASK [Pull the latest main branch from github repo=https://github.com/oconnordaniel/dans-homepage.git, dest=/home/dan/dans-homepage] **********
+2023-03-09 20:19:03,945 p=23705 u=dan n=ansible | ok: [dans-jekyll.lan]
+2023-03-09 20:19:03,953 p=23705 u=dan n=ansible | TASK [Setup bundle chdir=/home/dan/dans-homepage, executable=/bin/bash, _raw_params=/home/dan/gems/bin/bundle] ********************************
+2023-03-09 20:19:04,245 p=23705 u=dan n=ansible | fatal: [dans-jekyll.lan]: FAILED! => changed=true 
+  cmd: /home/dan/gems/bin/bundle
+  delta: '0:00:00.004528'
+  end: '2023-03-09 20:19:04.225518'
+  msg: non-zero return code
+  rc: 127
+  start: '2023-03-09 20:19:04.220990'
+  stderr: '/bin/bash: line 1: /home/dan/gems/bin/bundle: No such file or directory'
+  stderr_lines: <omitted>
+  stdout: ''
+  stdout_lines: <omitted>
+2023-03-09 20:19:04,246 p=23705 u=dan n=ansible | PLAY RECAP ************************************************************************************************************************************
+2023-03-09 20:19:04,246 p=23705 u=dan n=ansible | dans-jekyll.lan            : ok=5    changed=0    unreachable=0    failed=1    skipped=0    rescued=0    ignored=0   
+2023-03-09 20:31:58,851 p=28675 u=dan n=ansible | PLAY [all] ************************************************************************************************************************************
+2023-03-09 20:31:58,857 p=28675 u=dan n=ansible | TASK [Gathering Facts ] ***********************************************************************************************************************
+2023-03-09 20:32:00,011 p=28675 u=dan n=ansible | ok: [dans-jekyll.lan]
+2023-03-09 20:32:00,032 p=28675 u=dan n=ansible | TASK [Install tools name=['git', 'docker', 'docker-compose', 'ruby-full', 'build-essential', 'zlib1g-dev']] ***********************************
+2023-03-09 20:32:00,098 p=28675 u=dan n=ansible |  [ERROR]: User interrupted execution
+

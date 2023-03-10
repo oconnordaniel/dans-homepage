@@ -26,17 +26,17 @@
         name: bundler
         state: latest
 
-    - name: Setup bundle
-      ansible.builtin.shell: 
-        cmd: /home/ubuntu/gems/bin/bundle
-        chdir: /home/ubuntu/dans-homepage
-        executable: /bin/bash
-
     - name: Pull the latest main branch from github
       ansible.builtin.git:
         repo: 'https://github.com/oconnordaniel/dans-homepage.git'
-        dest: /home/ubuntu/dans-homepage
+        dest: /home/dan/dans-homepage
       notify: build_server
+
+    - name: Setup bundle
+      ansible.builtin.shell: 
+        cmd: /home/dan/gems/bin/bundle
+        chdir: /home/dan/dans-homepage
+        executable: /bin/bash
 
     - community.docker.docker_compose:
         project_name: dans-homepage
@@ -46,7 +46,7 @@
             dans-homepage:
               image: nginx:stable-alpine
               volumes:
-                - /home/ubuntu/dans-homepage/_site/:/usr/share/nginx/html/
+                - /home/dan/dans-homepage/_site/:/usr/share/nginx/html/
               ports:
                 - "80:80"
 
@@ -54,7 +54,7 @@
     - name: build_server
       ansible.builtin.shell: 
         cmd: JEKYLL_ENV=production /home/ubuntu/gems/bin/bundle exec jekyll b
-        chdir: /home/ubuntu/dans-homepage
+        chdir: /home/dan/dans-homepage
         executable: /bin/bash
       notify: restart_docker
 
