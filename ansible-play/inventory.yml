@@ -1,5 +1,6 @@
 all:
   hosts:
-    ec2-54-186-211-240.us-west-2.compute.amazonaws.com:
-      ansible_user: ubuntu
-
+#    ec2-54-186-211-240.us-west-2.compute.amazonaws.com:
+#      ansible_user: ubuntu
+    dans-jekyll.lan:
+      ansible_user: dan
