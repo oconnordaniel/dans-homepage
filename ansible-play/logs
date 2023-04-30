@@ -1964,3 +1964,229 @@ The offending line appears to be:
 2023-03-09 20:32:00,032 p=28675 u=dan n=ansible | TASK [Install tools name=['git', 'docker', 'docker-compose', 'ruby-full', 'build-essential', 'zlib1g-dev']] ***********************************
 2023-03-09 20:32:00,098 p=28675 u=dan n=ansible |  [ERROR]: User interrupted execution
 
+2023-04-30 13:15:52,913 p=117558 u=dan n=ansible | PLAY [all] ******************************************************************************************************************************************************************************************
+2023-04-30 13:15:52,917 p=117558 u=dan n=ansible | TASK [Gathering Facts ] *****************************************************************************************************************************************************************************
+2023-04-30 13:15:54,264 p=117558 u=dan n=ansible | ok: [dans-homepage.lan]
+2023-04-30 13:15:54,281 p=117558 u=dan n=ansible | TASK [Install tools name=['git', 'docker', 'docker-compose', 'ruby-full', 'build-essential', 'zlib1g-dev']] *****************************************************************************************
+2023-04-30 13:16:25,621 p=117558 u=dan n=ansible | changed: [dans-homepage.lan]
+2023-04-30 13:16:25,626 p=117558 u=dan n=ansible | TASK [Install jekyll name=jekyll, state=latest] *****************************************************************************************************************************************************
+2023-04-30 13:16:27,093 p=117558 u=dan n=ansible | ok: [dans-homepage.lan]
+2023-04-30 13:16:27,097 p=117558 u=dan n=ansible | TASK [Install bundler name=bundler, state=latest] ***************************************************************************************************************************************************
+2023-04-30 13:16:28,351 p=117558 u=dan n=ansible | ok: [dans-homepage.lan]
+2023-04-30 13:16:28,359 p=117558 u=dan n=ansible | TASK [Pull the latest main branch from github repo=https://github.com/oconnordaniel/dans-homepage.git, dest=/home/dan/dans-homepage] ****************************************************************
+2023-04-30 13:16:32,057 p=117558 u=dan n=ansible | changed: [dans-homepage.lan]
+2023-04-30 13:16:32,062 p=117558 u=dan n=ansible | TASK [Setup bundle chdir=/home/dan/dans-homepage, executable=/bin/bash, _raw_params=/home/dan/gems/bin/bundle] **************************************************************************************
+2023-04-30 13:16:32,356 p=117558 u=dan n=ansible | fatal: [dans-homepage.lan]: FAILED! => changed=true 
+  cmd: /home/dan/gems/bin/bundle
+  delta: '0:00:00.003435'
+  end: '2023-04-30 13:16:32.342123'
+  msg: non-zero return code
+  rc: 127
+  start: '2023-04-30 13:16:32.338688'
+  stderr: '/bin/bash: line 1: /home/dan/gems/bin/bundle: No such file or directory'
+  stderr_lines: <omitted>
+  stdout: ''
+  stdout_lines: <omitted>
+2023-04-30 13:16:32,356 p=117558 u=dan n=ansible | PLAY RECAP ******************************************************************************************************************************************************************************************
+2023-04-30 13:16:32,356 p=117558 u=dan n=ansible | dans-homepage.lan          : ok=5    changed=2    unreachable=0    failed=1    skipped=0    rescued=0    ignored=0   
+2023-04-30 13:19:26,670 p=117859 u=dan n=ansible | PLAY [all] ******************************************************************************************************************************************************************************************
+2023-04-30 13:19:26,674 p=117859 u=dan n=ansible | TASK [Gathering Facts ] *****************************************************************************************************************************************************************************
+2023-04-30 13:19:28,021 p=117859 u=dan n=ansible | ok: [dans-homepage.lan]
+2023-04-30 13:19:28,040 p=117859 u=dan n=ansible | TASK [Install tools name=['git', 'docker', 'docker-compose', 'ruby-full', 'build-essential', 'zlib1g-dev']] *****************************************************************************************
+2023-04-30 13:19:28,937 p=117859 u=dan n=ansible | ok: [dans-homepage.lan]
+2023-04-30 13:19:28,946 p=117859 u=dan n=ansible | TASK [Install jekyll name=jekyll, state=latest] *****************************************************************************************************************************************************
+2023-04-30 13:19:30,287 p=117859 u=dan n=ansible | ok: [dans-homepage.lan]
+2023-04-30 13:19:30,294 p=117859 u=dan n=ansible | TASK [Install bundler name=bundler, state=latest] ***************************************************************************************************************************************************
+2023-04-30 13:19:31,558 p=117859 u=dan n=ansible | ok: [dans-homepage.lan]
+2023-04-30 13:19:31,564 p=117859 u=dan n=ansible | TASK [Pull the latest main branch from github repo=https://github.com/oconnordaniel/dans-homepage.git, dest=/home/dan/dans-homepage] ****************************************************************
+2023-04-30 13:19:31,918 p=117859 u=dan n=ansible | fatal: [dans-homepage.lan]: FAILED! => changed=false 
+  before: 17698608ab9ff5aeaca03628fc09b88c9d940158
+  msg: 'Local modifications exist in the destination: /home/dan/dans-homepage (force=no).'
+2023-04-30 13:19:31,919 p=117859 u=dan n=ansible | PLAY RECAP ******************************************************************************************************************************************************************************************
+2023-04-30 13:19:31,919 p=117859 u=dan n=ansible | dans-homepage.lan          : ok=4    changed=0    unreachable=0    failed=1    skipped=0    rescued=0    ignored=0   
+2023-04-30 13:20:25,630 p=117998 u=dan n=ansible | PLAY [all] ******************************************************************************************************************************************************************************************
+2023-04-30 13:20:25,634 p=117998 u=dan n=ansible | TASK [Gathering Facts ] *****************************************************************************************************************************************************************************
+2023-04-30 13:20:26,705 p=117998 u=dan n=ansible | ok: [dans-homepage.lan]
+2023-04-30 13:20:26,726 p=117998 u=dan n=ansible | TASK [Install tools name=['git', 'docker', 'docker-compose', 'ruby-full', 'build-essential', 'zlib1g-dev']] *****************************************************************************************
+2023-04-30 13:20:27,643 p=117998 u=dan n=ansible | ok: [dans-homepage.lan]
+2023-04-30 13:20:27,650 p=117998 u=dan n=ansible | TASK [Install jekyll name=jekyll, state=latest] *****************************************************************************************************************************************************
+2023-04-30 13:20:29,015 p=117998 u=dan n=ansible | ok: [dans-homepage.lan]
+2023-04-30 13:20:29,023 p=117998 u=dan n=ansible | TASK [Install bundler name=bundler, state=latest] ***************************************************************************************************************************************************
+2023-04-30 13:20:30,281 p=117998 u=dan n=ansible | ok: [dans-homepage.lan]
+2023-04-30 13:20:30,287 p=117998 u=dan n=ansible | TASK [Pull the latest main branch from github repo=https://github.com/oconnordaniel/dans-homepage.git, dest=/home/dan/dans-homepage] ****************************************************************
+2023-04-30 13:20:34,388 p=117998 u=dan n=ansible | changed: [dans-homepage.lan]
+2023-04-30 13:20:34,396 p=117998 u=dan n=ansible | TASK [Setup bundle chdir=/home/dan/dans-homepage, executable=/bin/bash, _raw_params=/home/dan/gems/bin/bundle] **************************************************************************************
+2023-04-30 13:20:34,678 p=117998 u=dan n=ansible | fatal: [dans-homepage.lan]: FAILED! => changed=true 
+  cmd: /home/dan/gems/bin/bundle
+  delta: '0:00:00.003398'
+  end: '2023-04-30 13:20:34.664465'
+  msg: non-zero return code
+  rc: 127
+  start: '2023-04-30 13:20:34.661067'
+  stderr: '/bin/bash: line 1: /home/dan/gems/bin/bundle: No such file or directory'
+  stderr_lines: <omitted>
+  stdout: ''
+  stdout_lines: <omitted>
+2023-04-30 13:20:34,678 p=117998 u=dan n=ansible | PLAY RECAP ******************************************************************************************************************************************************************************************
+2023-04-30 13:20:34,678 p=117998 u=dan n=ansible | dans-homepage.lan          : ok=5    changed=1    unreachable=0    failed=1    skipped=0    rescued=0    ignored=0   
+2023-04-30 13:22:51,524 p=118284 u=dan n=ansible | PLAY [all] ******************************************************************************************************************************************************************************************
+2023-04-30 13:22:51,529 p=118284 u=dan n=ansible | TASK [Gathering Facts ] *****************************************************************************************************************************************************************************
+2023-04-30 13:22:52,858 p=118284 u=dan n=ansible | ok: [dans-homepage.lan]
+2023-04-30 13:22:52,879 p=118284 u=dan n=ansible | TASK [Install tools name=['git', 'docker', 'docker-compose', 'ruby-full', 'build-essential', 'zlib1g-dev']] *****************************************************************************************
+2023-04-30 13:22:53,777 p=118284 u=dan n=ansible | ok: [dans-homepage.lan]
+2023-04-30 13:22:53,782 p=118284 u=dan n=ansible | TASK [Install jekyll name=jekyll, state=latest] *****************************************************************************************************************************************************
+2023-04-30 13:22:55,152 p=118284 u=dan n=ansible | ok: [dans-homepage.lan]
+2023-04-30 13:22:55,159 p=118284 u=dan n=ansible | TASK [Install bundler name=bundler, state=latest] ***************************************************************************************************************************************************
+2023-04-30 13:22:56,417 p=118284 u=dan n=ansible | ok: [dans-homepage.lan]
+2023-04-30 13:22:56,426 p=118284 u=dan n=ansible | TASK [Pull the latest main branch from github repo=https://github.com/oconnordaniel/dans-homepage.git, dest=/home/dan/dans-homepage] ****************************************************************
+2023-04-30 13:22:57,754 p=118284 u=dan n=ansible | ok: [dans-homepage.lan]
+2023-04-30 13:22:57,761 p=118284 u=dan n=ansible | TASK [Setup bundle chdir=/home/dan/dans-homepage, executable=/bin/bash, _raw_params=/home/dan/gems/bin/bundle] **************************************************************************************
+2023-04-30 13:22:58,043 p=118284 u=dan n=ansible | fatal: [dans-homepage.lan]: FAILED! => changed=true 
+  cmd: /home/dan/gems/bin/bundle
+  delta: '0:00:00.003322'
+  end: '2023-04-30 13:22:58.030746'
+  msg: non-zero return code
+  rc: 127
+  start: '2023-04-30 13:22:58.027424'
+  stderr: '/bin/bash: line 1: /home/dan/gems/bin/bundle: No such file or directory'
+  stderr_lines: <omitted>
+  stdout: ''
+  stdout_lines: <omitted>
+2023-04-30 13:22:58,044 p=118284 u=dan n=ansible | PLAY RECAP ******************************************************************************************************************************************************************************************
+2023-04-30 13:22:58,044 p=118284 u=dan n=ansible | dans-homepage.lan          : ok=5    changed=0    unreachable=0    failed=1    skipped=0    rescued=0    ignored=0   
+2023-04-30 13:24:31,296 p=118454 u=dan n=ansible | PLAY [all] ******************************************************************************************************************************************************************************************
+2023-04-30 13:24:31,301 p=118454 u=dan n=ansible | TASK [Gathering Facts ] *****************************************************************************************************************************************************************************
+2023-04-30 13:24:32,646 p=118454 u=dan n=ansible | ok: [dans-homepage.lan]
+2023-04-30 13:24:32,666 p=118454 u=dan n=ansible | TASK [Install tools name=['git', 'docker', 'docker-compose', 'ruby-full', 'build-essential', 'zlib1g-dev']] *****************************************************************************************
+2023-04-30 13:24:33,560 p=118454 u=dan n=ansible | ok: [dans-homepage.lan]
+2023-04-30 13:24:33,567 p=118454 u=dan n=ansible | TASK [Install jekyll name=jekyll, state=latest] *****************************************************************************************************************************************************
+2023-04-30 13:24:34,922 p=118454 u=dan n=ansible | ok: [dans-homepage.lan]
+2023-04-30 13:24:34,927 p=118454 u=dan n=ansible | TASK [Install bundler name=bundler, state=latest] ***************************************************************************************************************************************************
+2023-04-30 13:24:36,173 p=118454 u=dan n=ansible | ok: [dans-homepage.lan]
+2023-04-30 13:24:36,178 p=118454 u=dan n=ansible | TASK [Pull the latest main branch from github repo=https://github.com/oconnordaniel/dans-homepage.git, dest=/home/dan/dans-homepage] ****************************************************************
+2023-04-30 13:24:37,421 p=118454 u=dan n=ansible | ok: [dans-homepage.lan]
+2023-04-30 13:24:37,427 p=118454 u=dan n=ansible | TASK [Setup bundle chdir=/home/dan/dans-homepage, executable=/bin/bash, _raw_params=/home/dan/gems/bin/bundle] **************************************************************************************
+2023-04-30 13:24:37,718 p=118454 u=dan n=ansible | fatal: [dans-homepage.lan]: FAILED! => changed=true 
+  cmd: /home/dan/gems/bin/bundle
+  delta: '0:00:00.003346'
+  end: '2023-04-30 13:24:37.705779'
+  msg: non-zero return code
+  rc: 127
+  start: '2023-04-30 13:24:37.702433'
+  stderr: '/bin/bash: line 1: /home/dan/gems/bin/bundle: No such file or directory'
+  stderr_lines: <omitted>
+  stdout: ''
+  stdout_lines: <omitted>
+2023-04-30 13:24:37,718 p=118454 u=dan n=ansible | PLAY RECAP ******************************************************************************************************************************************************************************************
+2023-04-30 13:24:37,719 p=118454 u=dan n=ansible | dans-homepage.lan          : ok=5    changed=0    unreachable=0    failed=1    skipped=0    rescued=0    ignored=0   
+2023-04-30 13:26:14,918 p=118639 u=dan n=ansible | PLAY [all] ******************************************************************************************************************************************************************************************
+2023-04-30 13:26:14,923 p=118639 u=dan n=ansible | TASK [Gathering Facts ] *****************************************************************************************************************************************************************************
+2023-04-30 13:26:16,266 p=118639 u=dan n=ansible | ok: [dans-homepage.lan]
+2023-04-30 13:26:16,276 p=118639 u=dan n=ansible | TASK [Install tools name=['git', 'docker', 'docker-compose', 'ruby-full', 'build-essential', 'zlib1g-dev']] *****************************************************************************************
+2023-04-30 13:26:17,179 p=118639 u=dan n=ansible | ok: [dans-homepage.lan]
+2023-04-30 13:26:17,186 p=118639 u=dan n=ansible | TASK [Install jekyll name=jekyll, state=latest] *****************************************************************************************************************************************************
+2023-04-30 13:26:18,555 p=118639 u=dan n=ansible | ok: [dans-homepage.lan]
+2023-04-30 13:26:18,561 p=118639 u=dan n=ansible | TASK [Install bundler name=bundler, state=latest] ***************************************************************************************************************************************************
+2023-04-30 13:26:19,813 p=118639 u=dan n=ansible | ok: [dans-homepage.lan]
+2023-04-30 13:26:19,822 p=118639 u=dan n=ansible | TASK [Pull the latest main branch from github repo=https://github.com/oconnordaniel/dans-homepage.git, dest=/home/dan/dans-homepage] ****************************************************************
+2023-04-30 13:26:21,024 p=118639 u=dan n=ansible | ok: [dans-homepage.lan]
+2023-04-30 13:26:21,031 p=118639 u=dan n=ansible | TASK [community.docker.docker_compose project_name=dans-homepage, definition={'version': '2', 'services': {'dans-homepage': {'image': 'nginx:stable-alpine', 'volumes': ['/home/dan/dans-homepage/_site/:/usr/share/nginx/html/'], 'ports': ['80:80']}}}] ***
+2023-04-30 13:26:21,556 p=118639 u=dan n=ansible | fatal: [dans-homepage.lan]: FAILED! => changed=false 
+  msg: 'Error connecting: Error while fetching server API version: (''Connection aborted.'', PermissionError(13, ''Permission denied''))'
+2023-04-30 13:26:21,557 p=118639 u=dan n=ansible | PLAY RECAP ******************************************************************************************************************************************************************************************
+2023-04-30 13:26:21,557 p=118639 u=dan n=ansible | dans-homepage.lan          : ok=5    changed=0    unreachable=0    failed=1    skipped=0    rescued=0    ignored=0   
+2023-04-30 13:26:56,989 p=118779 u=dan n=ansible | ERROR! We were unable to read either as JSON nor YAML, these are the errors we got from each:
+JSON: Expecting value: line 1 column 1 (char 0)
+
+Syntax Error while loading YAML.
+  mapping values are not allowed in this context
+
+The error appears to be in '/home/dan/Dev/dans-homepage/ansible-play/deploy.yml': line 43, column 21, but may
+be elsewhere in the file depending on the exact syntax problem.
+
+The offending line appears to be:
+
+      become: true
+        project_name: dans-homepage
+                    ^ here
+
+2023-04-30 13:27:39,016 p=118903 u=dan n=ansible | [WARNING]: While constructing a mapping from /home/dan/Dev/dans-homepage/ansible-play/deploy.yml, line 3, column 3, found a duplicate dict key (tasks). Using last defined value only.
+
+2023-04-30 13:27:39,081 p=118903 u=dan n=ansible | PLAY [all] ******************************************************************************************************************************************************************************************
+2023-04-30 13:27:39,087 p=118903 u=dan n=ansible | TASK [Gathering Facts ] *****************************************************************************************************************************************************************************
+2023-04-30 13:27:40,430 p=118903 u=dan n=ansible | ok: [dans-homepage.lan]
+2023-04-30 13:27:40,440 p=118903 u=dan n=ansible | TASK [docker-compose project_name=dans-homepage, definition={'version': '2', 'services': {'dans-homepage': {'image': 'nginx:stable-alpine', 'volumes': ['/home/dan/dans-homepage/_site/:/usr/share/nginx/html/'], 'ports': ['80:80']}}}] ***
+2023-04-30 13:27:40,956 p=118903 u=dan n=ansible | fatal: [dans-homepage.lan]: FAILED! => changed=false 
+  msg: 'Error connecting: Error while fetching server API version: (''Connection aborted.'', PermissionError(13, ''Permission denied''))'
+2023-04-30 13:27:40,957 p=118903 u=dan n=ansible | PLAY RECAP ******************************************************************************************************************************************************************************************
+2023-04-30 13:27:40,957 p=118903 u=dan n=ansible | dans-homepage.lan          : ok=1    changed=0    unreachable=0    failed=1    skipped=0    rescued=0    ignored=0   
+2023-04-30 13:28:17,891 p=119026 u=dan n=ansible | ERROR! We were unable to read either as JSON nor YAML, these are the errors we got from each:
+JSON: Expecting value: line 1 column 1 (char 0)
+
+Syntax Error while loading YAML.
+  did not find expected '-' indicator
+
+The error appears to be in '/home/dan/Dev/dans-homepage/ansible-play/deploy.yml': line 42, column 5, but may
+be elsewhere in the file depending on the exact syntax problem.
+
+The offending line appears to be:
+
+    - community.docker.docker_compose:
+    become: true
+    ^ here
+
+2023-04-30 13:28:27,162 p=119090 u=dan n=ansible | ERROR! We were unable to read either as JSON nor YAML, these are the errors we got from each:
+JSON: Expecting value: line 1 column 1 (char 0)
+
+Syntax Error while loading YAML.
+  mapping values are not allowed in this context
+
+The error appears to be in '/home/dan/Dev/dans-homepage/ansible-play/deploy.yml': line 43, column 21, but may
+be elsewhere in the file depending on the exact syntax problem.
+
+The offending line appears to be:
+
+      become: true
+        project_name: dans-homepage
+                    ^ here
+
+2023-04-30 13:29:54,050 p=119347 u=dan n=ansible | PLAY [all] ******************************************************************************************************************************************************************************************
+2023-04-30 13:29:54,054 p=119347 u=dan n=ansible | TASK [Gathering Facts ] *****************************************************************************************************************************************************************************
+2023-04-30 13:29:55,392 p=119347 u=dan n=ansible | ok: [dans-homepage.lan]
+2023-04-30 13:29:55,414 p=119347 u=dan n=ansible | TASK [Install tools name=['git', 'docker', 'docker-compose', 'ruby-full', 'build-essential', 'zlib1g-dev']] *****************************************************************************************
+2023-04-30 13:29:56,329 p=119347 u=dan n=ansible | ok: [dans-homepage.lan]
+2023-04-30 13:29:56,334 p=119347 u=dan n=ansible | TASK [Install jekyll name=jekyll, state=latest] *****************************************************************************************************************************************************
+2023-04-30 13:29:57,733 p=119347 u=dan n=ansible | ok: [dans-homepage.lan]
+2023-04-30 13:29:57,739 p=119347 u=dan n=ansible | TASK [Install bundler name=bundler, state=latest] ***************************************************************************************************************************************************
+2023-04-30 13:29:58,991 p=119347 u=dan n=ansible | ok: [dans-homepage.lan]
+2023-04-30 13:29:58,998 p=119347 u=dan n=ansible | TASK [Pull the latest main branch from github repo=https://github.com/oconnordaniel/dans-homepage.git, dest=/home/dan/dans-homepage] ****************************************************************
+2023-04-30 13:30:00,224 p=119347 u=dan n=ansible | ok: [dans-homepage.lan]
+2023-04-30 13:30:00,231 p=119347 u=dan n=ansible | TASK [Setup bundle chdir=/home/dan/dans-homepage, executable=/bin/bash, _raw_params=/home/dan/gems/bin/bundle] **************************************************************************************
+2023-04-30 13:30:00,509 p=119347 u=dan n=ansible | fatal: [dans-homepage.lan]: FAILED! => changed=true 
+  cmd: /home/dan/gems/bin/bundle
+  delta: '0:00:00.003354'
+  end: '2023-04-30 13:30:00.493987'
+  msg: non-zero return code
+  rc: 127
+  start: '2023-04-30 13:30:00.490633'
+  stderr: '/bin/bash: line 1: /home/dan/gems/bin/bundle: No such file or directory'
+  stderr_lines: <omitted>
+  stdout: ''
+  stdout_lines: <omitted>
+2023-04-30 13:30:00,510 p=119347 u=dan n=ansible | PLAY RECAP ******************************************************************************************************************************************************************************************
+2023-04-30 13:30:00,510 p=119347 u=dan n=ansible | dans-homepage.lan          : ok=5    changed=0    unreachable=0    failed=1    skipped=0    rescued=0    ignored=0   
+2023-04-30 13:30:26,547 p=119485 u=dan n=ansible | PLAY [all] ******************************************************************************************************************************************************************************************
+2023-04-30 13:30:26,552 p=119485 u=dan n=ansible | TASK [Gathering Facts ] *****************************************************************************************************************************************************************************
+2023-04-30 13:30:27,618 p=119485 u=dan n=ansible | ok: [dans-homepage.lan]
+2023-04-30 13:30:27,637 p=119485 u=dan n=ansible | TASK [Install tools name=['git', 'docker', 'docker-compose', 'ruby-full', 'build-essential', 'zlib1g-dev']] *****************************************************************************************
+2023-04-30 13:30:28,538 p=119485 u=dan n=ansible | ok: [dans-homepage.lan]
+2023-04-30 13:30:28,549 p=119485 u=dan n=ansible | TASK [Install jekyll name=jekyll, state=latest] *****************************************************************************************************************************************************
+2023-04-30 13:30:29,883 p=119485 u=dan n=ansible | ok: [dans-homepage.lan]
+2023-04-30 13:30:29,890 p=119485 u=dan n=ansible | TASK [Install bundler name=bundler, state=latest] ***************************************************************************************************************************************************
+2023-04-30 13:30:31,144 p=119485 u=dan n=ansible | ok: [dans-homepage.lan]
+2023-04-30 13:30:31,153 p=119485 u=dan n=ansible | TASK [Pull the latest main branch from github repo=https://github.com/oconnordaniel/dans-homepage.git, dest=/home/dan/dans-homepage] ****************************************************************
+2023-04-30 13:30:32,368 p=119485 u=dan n=ansible | ok: [dans-homepage.lan]
+2023-04-30 13:30:32,375 p=119485 u=dan n=ansible | TASK [Docker compose project_name=dans-homepage, definition={'version': '2', 'services': {'dans-homepage': {'image': 'nginx:stable-alpine', 'volumes': ['/home/dan/dans-homepage/_site/:/usr/share/nginx/html/'], 'ports': ['80:80']}}}] ***
+2023-04-30 13:30:39,695 p=119485 u=dan n=ansible | changed: [dans-homepage.lan]
+2023-04-30 13:30:39,722 p=119485 u=dan n=ansible | PLAY RECAP ******************************************************************************************************************************************************************************************
+2023-04-30 13:30:39,722 p=119485 u=dan n=ansible | dans-homepage.lan          : ok=6    changed=1    unreachable=0    failed=0    skipped=0    rescued=0    ignored=0   

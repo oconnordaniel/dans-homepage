@@ -32,13 +32,15 @@
         dest: /home/dan/dans-homepage
       notify: build_server
 
-    - name: Setup bundle
-      ansible.builtin.shell: 
-        cmd: /home/dan/gems/bin/bundle
-        chdir: /home/dan/dans-homepage
-        executable: /bin/bash
+#    - name: Setup bundle
+#      ansible.builtin.shell: 
+#        cmd: /home/dan/gems/bin/bundle
+#        chdir: /home/dan/dans-homepage
+#        executable: /bin/bash
 
-    - community.docker.docker_compose:
+    - name: Docker compose
+      become: true
+      community.docker.docker_compose:
         project_name: dans-homepage
         definition:
           version: '2'
