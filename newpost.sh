@@ -1,0 +1,1 @@
+cp ./template.md ./_posts/$(date +%F)-newpost.md
