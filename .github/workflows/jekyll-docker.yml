@@ -23,7 +23,7 @@ jobs:
       uses: actions/upload-artifact@v3.1.3
       with:
         # Artifact name
-        name: ${{ github.workspace }}/_site 
-        path: ./dans_site
+        name: dans_site
+        path: ${{ github.workspace }}/_site 
         # The desired behavior if no files are found using the provided path.
     
