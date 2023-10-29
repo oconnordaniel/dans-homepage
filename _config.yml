@@ -189,11 +189,16 @@ exclude:
   - gulpfile.js
   - node_modules
   - package*.json
+
   - Dockerfile
   - docker-compose.yml
   - newpost.sh
   - update_server.sh
   - template.md
+  - ansible-play
+  - Resources
+  - cloud-formation.yml
+  - dans-task-def.json
   - .git
   - .gitignore
   - .gitmodures
