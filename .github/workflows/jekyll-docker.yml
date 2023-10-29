@@ -19,13 +19,12 @@ jobs:
         -v ${{ github.workspace }}:/srv/jekyll -v ${{ github.workspace }}/_site:/srv/jekyll/_site \
         jekyll/builder:latest /bin/bash -c "chmod -R 777 /srv/jekyll && jekyll build --future"
 
-    - name: Upload a Build Artifact
-      uses: actions/upload-artifact@v3.1.3
-      with:
-        # Artifact name
-        name: 'dans_site'
-        path: '${{ github.workspace }}/_site/*'
-        retention-days: 3
+#    - name: Upload a Build Artifact
+#      uses: actions/upload-artifact@v3.1.3
+#      with:
+#        name: 'dans_site'
+#        path: '${{ github.workspace }}/_site/*'
+#        retention-days: 3
 
 #  deploy:
 #    runs-on: ubuntu-latest
@@ -38,7 +37,6 @@ jobs:
         AWS_S3_BUCKET: ${{ secrets.AWS_S3_BUCKET }}
         AWS_ACCESS_KEY_ID: ${{ secrets.AWS_ACCESS_KEY_ID }}
         AWS_SECRET_ACCESS_KEY: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
-        AWS_REGION: 'us-west-2'   # optional: defaults to us-east-1
-        SOURCE_DIR: './dans-homepage/_site'      # optional: defaults to entire repository
-
+        AWS_REGION: 'us-west-2'
+        SOURCE_DIR: ${{ github.workspace }}/_site
 
