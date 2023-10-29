@@ -189,6 +189,15 @@ exclude:
   - gulpfile.js
   - node_modules
   - package*.json
+  - Dockerfile
+  - docker-compose.yml
+  - newpost.sh
+  - update_server.sh
+  - template.md
+  - .git
+  - .gitignore
+  - .gitmodures
+  - .github
 
 jekyll-archives:
   enabled: [categories, tags]
