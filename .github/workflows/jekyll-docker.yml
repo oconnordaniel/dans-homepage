@@ -24,12 +24,12 @@ jobs:
       with:
         # Artifact name
         name: 'dans_site'
-        path: ${{ github.workspace }}/_site 
+        path: ${{ github.workspace }}/_site
         # The desired behavior if no files are found using the provided path.
 
-  deploy:
-    runs-on: ubuntu-latest
-    steps:
+#  deploy:
+#    runs-on: ubuntu-latest
+#    steps:
     - uses: jakejarvis/s3-sync-action@master
       with:
         args: --acl public-read --follow-symlinks --delete
