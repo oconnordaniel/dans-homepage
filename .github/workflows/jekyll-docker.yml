@@ -23,7 +23,7 @@ jobs:
       uses: actions/upload-artifact@v3.1.3
       with:
         name: 'dans_site'
-        path: _sites
+        path: _site
         retention-days: 3
 
 #  deploy:
@@ -38,5 +38,5 @@ jobs:
         AWS_ACCESS_KEY_ID: ${{ secrets.AWS_ACCESS_KEY_ID }}
         AWS_SECRET_ACCESS_KEY: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
         AWS_REGION: 'us-west-2'
-        SOURCE_DIR: _sites
+        SOURCE_DIR: _site
 
