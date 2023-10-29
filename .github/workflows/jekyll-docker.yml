@@ -24,7 +24,7 @@ jobs:
       with:
         # Artifact name
         name: 'dans_site'
-        path: ${{ github.workspace }}/dans-homepage/_site
+        path: '${{ github.workspace }}/_site/*'
         retention-days: 3
 
 #  deploy:
